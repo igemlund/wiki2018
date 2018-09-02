@@ -1,0 +1,248 @@
+<html>
+<script type="text/x-mathjax-config">
+  MathJax.Ajax.config.path["mhchem"] = "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.1.0";
+  MathJax.Hub.Config({
+    extensions: ["[mhchem]/mhchem.js"],
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script type="text/javascript"
+  src="http://2017.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500|Varela+Round" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/Team:Lund/styles/wrapper?action=raw&ctype=text/css&cache=37">
+<script type="text/javascript" src="/Team:Lund/scripts/bootstrap?action=raw&ctype=text/javascript"></script>
+<script type="text/javascript" src="/Team:Lund/scripts/ScrollTrigger?action=raw&ctype=text/javascript"></script>
+<script type="text/javascript" src="/Team:Lund/scripts/jquery-scrollTo?action=raw&ctype=text/javascript"></script>
+<script type="text/javascript" src="/Team:Lund/scripts/featherlight?action=raw&ctype=text/javascript"></script>
+
+<script>
+  $(document).ready(function() {
+    // Setup ScrollTrigger
+    var trigger = new ScrollTrigger({
+      centerVertical: true,
+      once: true
+    });
+
+    var pages = {
+      'Team:Lund':                                    '#li_home',
+      'Team:Lund/Team':                               '#li_team',
+      'Team:Lund/Collaborations':                     '#li_team',
+      'Team:Lund/Attributions':                       '#li_team',
+      'Team:Lund/Description':                        '#li_team',
+      'Team:Lund/Design':                             '#li_team',
+      'Team:Lund/Description':                        '#li_team',
+      'Team:Lund/Attributions':                       '#li_team',
+      'Team:Lund/Attributions/LundUniversity':        '#li_team',
+      'Team:Lund/Attributions/Team':                  '#li_team',
+      'Team:Lund/Attributions/Sponsors':              '#li_team',
+      'Team:Lund/Attributions/Inspiration':           '#li_team',
+      'Team:Lund/Attributions/ProjectDesign':         '#li_team',
+      'Team:Lund/Description':                        '#li_project',
+      'Team:Lund/Design':                             '#li_project',
+      'Team:Lund/Design/Animation':                   '#li_project',
+      'Team:Lund/Design/Theory':                      '#li_project',
+      'Team:Lund/Design/Design':                      '#li_project',
+      'Team:Lund/Design/Circuit':                     '#li_project',
+      'Team:Lund/Design/Experiments':                 '#li_project',
+      'Team:Lund/Design/References':                  '#li_project',
+      'Team:Lund/Results':                            '#li_project',
+      'Team:Lund/InterLab':                           '#li_project',
+      'Team:Lund/Parts':                              '#li_project',
+      'Team:Lund/Experiments':                        '#li_project',
+      'Team:Lund/Notebook':                           '#li_project',
+      'Team:Lund/Model':                              '#li_model',
+      'Team:Lund/Modeling/ModelDerivation':           '#li_model',
+      'Team:Lund/Modeling/ParameterEstimation':       '#li_model',
+      'Team:Lund/Modeling/Implementation':            '#li_model',
+      'Team:Lund/Safety':                             '#li_safety',
+      'Team:Lund/HP/Silver':                          '#li_hp',
+      'Team:Lund/HP/Gold_Integrated':                 '#li_hp',
+      'Team:Lund/Engagement':                         '#li_hp',
+      'Team:Lund/HP/Media':                           '#li_hp',
+      'Team:Lund/Communication':                      '#li_hp',
+    };
+
+    var listItem = $(pages[wgPageName]);
+    listItem.addClass('active');
+  });
+</script>
+
+<script>
+
+  // This is the jquery part of your template.
+  // Try not modify any of this code too much since it makes your menu work.
+
+  $(document).ready(function() {
+
+    $("#HQ_page").attr('id','');
+
+    // call the functions that control the menu
+    menu_functionality();
+    hide_show_menu();
+
+
+
+    //this function controls the expand and collapse buttons of the menu and changes the +/- symbols
+    function menu_functionality() {
+
+      //when clicking on a "menu_button", it will change the "+/-" accordingly and it will show/hide the corresponding submenu
+      $(".menu_button").click(function(){
+
+        // add or remove the class "open" , this class holds the "-"
+        $(this).children().toggleClass("open");
+        // show or hide the submenu
+        $(this).next('.submenu_wrapper').fadeToggle(400);
+      });
+
+      // when the screen size is smaller than 800px, the display_menu_control button appears and will show/hide the whole menu
+      $("#display_menu_control").click(function(){
+        $('#menu_content').fadeToggle(400);
+      });
+
+      // call the current page highlight function
+      highlight_current_page();
+    }
+
+
+    // call the highlight current page function to show it on the menu with a different background color
+    function highlight_current_page() {
+
+      // select a page from the menu based on the id assigned to it and the current page name and add the class "current page" to make it change background color
+      $("#"+  wgPageName.substring(wgPageName.lastIndexOf("/")+1, wgPageName.length ) + "_page").addClass("current_page");
+
+      // now that the current_page class has been added to a menu item, make the submenu fade in
+      $(".current_page").parents(".submenu_wrapper").fadeIn(400);
+      // change the +/- symbol of the corresponding menu button
+      $(".current_page").parents(".submenu_wrapper").prev().children().toggleClass("open");
+
+    }
+
+
+
+    // allow button on the black menu bar to show/hide the side menu
+    function hide_show_menu() {
+
+      // in case you preview mode is selected, the menu is hidden for better visibility
+      if (window.location.href.indexOf("submit") >= 0) {
+        $(".igem_2017_menu_wrapper").hide();
+      }
+
+      // if the black menu bar has been loaded
+        if (document.getElementById('bars_item')) {
+
+        // when the "bars_item" has been clicked
+        $("#bars_item").click(function() {
+          $("#sideMenu").hide();
+
+          // show/hide the menu wrapper
+          $(".igem_2017_menu_wrapper").fadeToggle("100");
+        });
+        }
+
+      // because the black menu bars loads at a different time than the rest of the page, this function is set on a time out so it can run again in case it has not been loaded yet
+      else {
+            setTimeout(hide_show_menu, 15);
+      }
+    }
+
+
+  });
+
+$(document).ready(function() {
+  var visible = false;
+  //Check to see if the window is top if not then display button
+  $(window).scroll(function() {
+    var scrollTop = $(this).scrollTop();
+    if (!visible) {
+      if (scrollTop > 400) {
+        $("#scroll-to-top-btn").fadeIn();
+        visible = true;
+      }
+    }
+    else if (scrollTop <= 400) {
+      $("#scroll-to-top-btn").fadeOut();
+      visible = false;
+    }
+  });
+  
+  $("#scroll-to-top-btn").click(function() {
+    $(window).scrollTo(0, 250);
+  });
+});
+
+</script>
+
+<style type="text/css">
+  /***************************************************** DEFAULT WIKI SETTINGS  ****************************************************/
+
+  /* Clear the default wiki settings */
+
+  #home_logo, #sideMenu { display:none; }
+  #sideMenu, #top_title, .patrollink  {display:none;}
+  #content { width:100%; padding:0px;  margin-top:-7px; margin-left:0px;}
+  body {background-color:white; }
+  #bodyContent h1, #bodyContent h2, #bodyContent h3, #bodyContent h4, #bodyContent h5 { margin-bottom: 0px; }
+</style>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<nav id="navbar" class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/Team:Lund">
+        <img alt="iGEM Lund" src="http://2017.igem.org/wiki/images/c/cb/T--Lund--logo-web.svg">
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+
+        <li id="li_home"><a href="/Team:Lund">Home</a></li>
+
+        <li id="li_team" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Team <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/Team:Lund/Team">Team</a></li>
+            <li><a href="/Team:Lund/Collaborations">Collaborations</a></li>
+            <li><a href="/Team:Lund/Attributions">Attributions</a></li>
+          </ul>
+        </li>
+
+        <li id="li_project" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Project <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/Team:Lund/Description">Description</a></li>
+            <li><a href="/Team:Lund/Design">Design</a></li>
+            <li><a href="/Team:Lund/Results">Results</a></li>
+            <li><a href="/Team:Lund/InterLab">InterLab</a></li>
+            <li><a href="/Team:Lund/Parts">Parts</a></li>
+            <li><a href="/Team:Lund/Experiments">Protocols</a></li>
+            <li><a href="/Team:Lund/Notebook">Notebook</a></li>
+          </ul>
+        </li>
+
+        <li id="li_model"><a href="/Team:Lund/Model">Model</a></li>
+        <li id="li_safety"><a href="/Team:Lund/Safety">Safety</a></li>
+        <li id="li_hp"><a href="/Team:Lund/HP/Silver">Practices</a></li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<button type="button" id="scroll-to-top-btn">
+  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+</button>
+
+</html>

@@ -1,0 +1,30 @@
+.navbar {
+  font-weight: 300;
+  position: absolute;
+  width: 100%;
+
+  @media (min-width: @grid-float-breakpoint) {
+    background-color: transparent;
+  }
+
+  .navbar-nav > li > .dropdown-menu {
+    border-radius: @border-radius-base;
+  }
+}
+
+.navbar-brand {
+  padding-top: @navbar-logo-padding-vertical;
+  padding-bottom: @navbar-logo-padding-vertical;
+
+  & > img {
+    height: @navbar-logo-height;
+  }
+}
+
+.navbar-no-margin {
+  margin-bottom: 0;
+}
+
+.navbar-gray {
+  background-color: @gray;
+}
