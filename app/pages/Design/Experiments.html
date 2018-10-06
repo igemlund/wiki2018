@@ -10,14 +10,14 @@
 <div class="container">
   <ul class="nav nav-pills nav-auto-stacked">
     <li role="presentation"><a href="/Team:Lund/Design">Overview</a></li>
-    <li role="presentation"><a href="/Team:Lund/Design/Animation">Animation</a></li>
+    <li role="presentation"><a href="/Team:Lund/Design/Approach">Approach</a></li>
     <li role="presentation"><a href="/Team:Lund/Design/Theory">Theory</a></li>
-    <li role="presentation"><a href="/Team:Lund/Design/Design">Project Design</a></li>
-    <li role="presentation"><a href="/Team:Lund/Design/Circuit">Circuit</a></li>
+    <li role="presentation"><a href="/Team:Lund/Design/Design">Design</a></li>
     <li role="presentation" class="active"><a href="/Team:Lund/Design/Experiments">Experiments</a></li>
     <li role="presentation"><a href="/Team:Lund/Design/References">References</a></li>
   </ul>
 </div>
+
 
 <div class="content-wrapper under-nav text-layout">
   <div class="container">
@@ -26,171 +26,90 @@
         <section>
           <h3 class="section-heading">Overview</h3>
           <p>
-
-            In order to design a cohesive experimental plan, we begun by defining the parameters of interest. This was done with the intention of
-            finding what constructs were necessary to not only generate parameter-data to fit the model but evaluate our parts both qualitatively and,
-            when applicable, quantitatively.
+            In this section we present and discuss the experimental plan we set up in order to test our idea of co-expressing vitreoscilla hemoglobin to increase protein yields. We chose to perform all experiments using the iGEM standard plasmids pSB1C3 and pSB1A3 and for the proof of concept we decided to use a green fluorescent protein (GFP). The purpose of this was two-fold. First, the protein is an excellent reporter as it is simple to detect. Secondly, the additional supply of oxygen provided by the hemoglobin should help the chromophore mature faster. This provides a second measure to quantify the presence and effect of the hemoglobin by measuring the initial transient of fluorescence.
 
           </p>
         </section>
 
         <section>
-          <h3 class="section-heading"><em>In silico</em> indications </h3>
+          <h3 class="section-heading">Plasmid construction </h3>
           <p>
+            Initially, we planned to order both the VHb constructs as well as the GFP construct directly from Integrated DNA Technologies (IDT). However, as the latter contained multiple repeated sequences, it could not be synthesized and we therefore decided to instead use Bba_J364000 that was provided in the iGEM distribution kit.
+          </p>
 
-            Through simulations of our intended construct with parameters defined a priori, we were able to draw some conclusions as to the validity
-            of our system as a microplastic biosensor and generated some insight into the expected behavior which we could apply in the wet-lab
-            setting.
+          <p>
+            The constructs from Fig. 1 were obtained and inserted into pSB1C3 using a combination of 3A-assembly, Gibson assembly and a standard digestion-ligation procedure. Initially, we used 3A-assembly following the protocol from the iGEM registry. However, with lack of results we modified the protocol slightly and proceeded with Gibson assembly and the standard digestion-ligation. The constructs in Fig. 2 were then built following the same path of trial and repeat.
+          </p>
 
-            The model reflected very high dose sensitivity with regards to both ligands, which serves as an indicator that our system ought to work as
-            a microplastic sensor. While we naturally expect lower affinity than that of the simulated natural ligands, it should still display
-            somewhat similar characteristics. This is important as the concentrations of measured homologues will most likely be low. Thus, we can
-            pass up on introducing positive autoregulatory motifs to our intended network topology.
-
-            The rise-time of the GFP concentration suggests a slowly forming output signal, with over 10 hours before it reaches 90% of steady-state
-            concentration (for varying concentrations of ligands). Thus, our fluorescence readings will have to be conducted first after several hours -
-            most likely 10 hours post induction. Furthermore, improving the kinetics of a single node in our network will not particularly change the
-            association time of GFP. That is to say, we do not need to “improve” any genes, for example through mutagenesis or simply changing some
-            sequence to one with similar function, in an attempt to decrease the time to output signal as it will most likely not work.
-
-            The IPTG concentrations will affect the overall gene transactivation and the associated GFP concentration. Thus, to achieve measureable results, we will use a relative high concentration corresponding to that of at least 1 mM.
+          <p>
+            The final biobricks were characterized and confirmed directly via a combination of sequencing, agarose gel electrophoresis and colony pcr, as well as measuring GFP fluorescence and observing the red color originating from the hemoglobin in the cell pellet. During further analysis, as described below, biobricks were additionally confirmed by absorbance measurements and flow cytometry.
           </p>
         </section>
 
         <section>
-          <h3 class="section-heading">Control construct design</h3>
+          <h3 class="section-heading">Batch cultivation</h3>
           <p>
-            In this section we introduce the constructs intended to be used as controls. The gene architecture is designed to best generate parameters to fit the model and evaluate individual gene behaviors.
+            Batch cultivations were carried out in Erlenmeyer flasks under various conditions. Both Lysogeny broth (LB) and Terrific broth (TB) were used as means of growing the cells under varying nutritional conditions. The idea here was that while VHb enhances oxygen utilization, there might also be an interaction with respect to nutritional availability as an increased metabolic activity demands additional oxygen. Also one could argue the other way around in that that low nutrient conditions puts further stress on the cells, which might cause VHb to either deliver oxygen or act directly as an antioxidant. Finally, by talking to experts within the field of biopharmaceutical production as a part of our integrated practices, we were taught that while LB is an excellent and cheap media, TB is more commonly used within the industry as it generally yields higher cell densities. Obviously, the additional cost of having a more expensive media is heavily outweighed by the return of producing more valuable bioproducts.
           </p>
 
-          The pETDuet-1 vector was chosen for all desired protein expressions in this project as recommended by our advisor Dr. Nélida Leiva Eriksson. Genes were
-          synthesized at Eurofins Genomics and cloned into the pETDuet-1 vector using the restriction site pairs NcoI/BamHI and NdeI/AatII. The restriction
-          sites were chosen based on their location downstream the two T7 promoters. In addition, it was required that these restriction enzymes were single
-          site cutters which was ensured by using the <i>RestrictionMapper</i> online tool. All the gene sequences used were codon optimized for <em>E.
-          coli</em> by using Eurofins’ and IDT’s codon optimization tools prior to ordering the constructs. Furthermore, all genes encoding a protein were chosen to be ended with the double stop codon, TAA TAA.
           <p>
+            Further conditions that were modified includes the free headspace volume in the cultivation flasks as a way of restricting the oxygen availability. This was accomplished by simply changing the headspace to culture volume ratio and using flasks with or without baffles. Clearly, by restricting the oxygen uptake, cell cultures expressing VHb should thrive compared to those without. The procedure was advised after a long Skype meeting with Prof. Benjamin C. Stark, a very important figure within the field of biochemistry and development of VHb technology. Finally, cells were also grown with 5-aminolevulinic acid (ALA) to further stimulate the synthesis of porphyrins.
+          </p>
         </section>
 
         <section>
-          <h3 class="section-heading">NahR</h3>
+          <h3 class="section-heading">Growth curve analysis</h3>
           <p>
-            The control plasmid carries the <i>nahR gene</i> with a histidine tag, located under the T7 promoter. The purpose of this control plasmid was to
-            see if it is possible to induce expression of NahR, using the drawn-up design illustrated in <i>fig. 1</i>. By utilizing the His-tag,
-            the protein could be purified in order to determine its concentration.
-          </p>
-          <p>
-            The DNA sequence for the NahR protein was obtained from the BioBrick part <a href="http://parts.igem.org/Part:BBa_K228004">BBa_K228004</a>.
+            In order to compare the growth rates between cells expressing different amounts of hemoglobin, cultivation experiments were carried out with samples taken at regular time intervals. The optical density was immediately measured by spectrophotometry. In total three controls were used: cells with no plasmid, with plasmid containing only the ribosome binding site R0010 (“empty plasmid”), and with a plasmid expressing only GFP. The control with an empty plasmid was used to make a fair comparison as the burden associated with a plasmid is twofold. First, the cell has to express the target proteins from within the plasmid. Secondly, the additional genes within the plasmid, such as the ones accounting for antibiotic resistance, need also to be expressed.
           </p>
 
-          <figure>
+          <!-- <figure>
             <img class="img-responsive" src="http://2017.igem.org/wiki/images/3/32/T--Lund--nahrt7.svg" alt="Gene structure">
             <figcaption>Figure 1: nahR sequence with His-tag located under the T7 promoter.</figcaption>
-          </figure>
+          </figure> -->
         </section>
 
         <section>
-          <h3 class="section-heading">sfGFP </h3>
+          <h3 class="section-heading">Proof of concept: Production of GFP </h3>
+
           <p>
-            The construct with <em>superfolder green fluorescent protein (sfGFP)</em> located under the T7 promoter, as depicted in <em>fig. 2</em>, was constructed to be used as a positive reference for the fluorescence signal.
+            The principle behind our proof of concept experiment is simple: if VHb has an effect on the production of recombinant GFP, there should be an observable change in fluorescence intensity. The fluorescence intensity was measured by flow cytometry. The advantage of this method over using a plate reader as in the InterLab study is that in flow cytometry, the fluorescence intensity is measured for each individual cell. This means that it is possible to determine whether effects of VHb on GFP production are caused by a change in overall cell density or a change within the individual cells. It also provides the additional advantage of giving much more exact information about the concentration of cells than what can be obtained by OD600.
           </p>
 
-          <figure>
+          <!-- <figure>
             <img class="img-responsive" src="http://2017.igem.org/wiki/images/4/4b/T--Lund--sgfpt7.svg" alt="Gene structure">
             <figcaption>Figure 2: <i>sfGFP</i> located under the T7 promoter.</figcaption>
-          </figure>
+          </figure> -->
         </section>
 
         <section>
-          <h3 class="section-heading">GFP1-9</h3>
+          <h3 class="section-heading">Case study: Production of protein A</h3>
           <p>
-
-            The purpose of expressing the largest fragment of the tripartite split-GFP was to examine if the protein emit any fluorescence signal and
-            if so, how large the fluorescence signal is compared to one from the sfGFP. A His-tag with 6 histidine residues was added to enable
-            purification and measurements of protein concentration. Construct illustrated in <i>fig. 3</i>.
+            After screening the promoters using GFP, we wanted to select some of them for co-expression with a protein of industrial interest. We decided to go with protein A, an antibody-binding protein with many applications such as purification of therapeutic antibodies and various analyses involving antibodies.
+            With protein A, we needed a different method of determining the yield rather than flow cytometry. We decided to use xx method to measure the concentration.
           </p>
 
-          <p>
-            The DNA sequence for the tripartite split GFP was obtained from a study by Cabantous <i>et al.</i> (2013) [40].
-          </p>
 
-          <figure>
+          <!-- <figure>
             <img class="img-responsive" src="http://2017.igem.org/wiki/images/9/9c/T--Lund--gfp19t7.svg" alt="Gene structure">
             <figcaption>Figure 3: GFP1-9 located under the T7 promoter.</figcaption>
-          </figure>
+          </figure> -->
         </section>
 
         <section>
-          <h3 class="section-heading">NahR with sfGFP under Psal promoter</h3>
+          <h3 class="section-heading">Case study: Reactor upscaling</h3>
           <p>
-            This control construct, illustrated in <i>fig. 4</i> was designed in order to investigate if added salicylate increases the transcription rate of
-            the reporter protein. Furthermore, the purpose was to examine the level of leaky expression obtained with no salicylate added. As
-            explained in the theory section, NahR binds to and activates the <i>Psal</i> promoter in presence of salicylate resulting in expression of the
-            reporter protein, in this case sfGFP.
+            *Fermenters instead of flasks: Input from Magnus and from AZ. Can control oxygen level much better + measure e.g. pH continuously. It’s a better model of how it actually is in the industry. Something I think about density becomes more of a problem or something with the oxygen which is more realistic in a fermenter.
           </p>
 
-          <p>
-            The DNA sequences for sfGFP and <i>Psal</i> promoter were obtained from <a
-            href="http://www.snapgene.com/resources/plasmid_files/fluorescent_protein_genes_and_plasmids/superfolder_GFP/">SnapGene’s Plasmid file</a>
-            and <a href="https://www.ncbi.nlm.nih.gov/nuccore/31249535?report=genbank">NCBI’s database</a>, respectively.
-          </p>
 
-          <figure>
+          <!-- <figure>
             <img class="img-responsive" src="http://2017.igem.org/wiki/images/3/35/T--Lund--nahrsfgfp.svg" alt="Gene structure">
             <figcaption>Figure 4: <i>nahR</i> located under the T7 promoter, inducible by IPTG. After induced expression of the NahR protein, the latter binds to <i>Psal</i> and the sfGFP is expressed.</figcaption>
           </figure>
+           -->
         </section>
 
-        <section>
-          <h3 class="section-heading">NahR with GFP1-9 under Psal promoter</h3>
-          <p>
-
-            Construct with <i>NahR</i> expressed under the T7 promoter and GFP1-9 located under the <i>Psal</i> promoter, as illustrated in <i>fig. 5</i>. The purpose of
-            this control was to confirm the expression of GFP1-9 as a result from activation of the <i>Psal</i> promoter.
-          </p>
-
-          <figure>
-            <img class="img-responsive" src="http://2017.igem.org/wiki/images/f/fb/T--Lund--nahrgfp.svg" alt="Gene structure">
-            <figcaption>Figure 5: The <i>NahR</i> gene located under the T7 promoter, inducible by IPTG. After induced expression of the NahR protein, the latter binds to <i>Psal</i> promoter (in presence of salicylate) and the GFP1-9 is expressed.</figcaption>
-          </figure>
-        </section>
-
-        <section>
-          <h3 class="section-heading">GFP10-hER-𝛂 LBD-GFP11</h3>
-          <p>
-            The control was constructed to confirm expression of the fusion protein GFP10-hER-α LBD-GFP11, illustrated in <i>fig. 6</i>. The protein is
-            attached to a 6 histidine residue tag to facilitate purification and consequently allow concentration measurements.   The DNA sequence for
-            the hER-α LBD was kindly provided by Dr. Huimin Zhao upon request.
-          </p>
-
-          <figure>
-            <img class="img-responsive" src="http://2017.igem.org/wiki/images/3/34/T--Lund--erhis.svg" alt="Gene structure">
-            <figcaption>Figure 6: GFP10-hER-α LBD-GFP11 located under the T7 promoter with His-tag.</figcaption>
-          </figure>
-        </section>
-
-        <section>
-          <h3 class="section-heading">GFP1-9 + GFP10-hER-α LBD-GFP11 device</h3>
-          <p>
-            Construct with GFP1-9 and GFP10-hER-α LBD-GFP11, each located under a T7 promoter. This control was designed to investigate the reassembling of the tripartite split GFP and measure its fluorescence.
-          </p>
-          <figure>
-            <img class="img-responsive" src="http://2017.igem.org/wiki/images/9/99/T--Lund--partsernahr.svg" alt="Gene structure">
-            <figcaption>Figure 7: Construct with genes encoding GFP1-9 and GFP10-hER-α LBD-GFP11 each placed under their own T7 promoter. Note that the <i>lac</i> operators have been omitted for clarity.</figcaption>
-          </figure>
-        </section>
-
-        <section>
-          <h3 class="section-heading">Intended experiments</h3>
-          <p>
-            <ul>
-              <li> Induce cell culture with different IPTG concentrations at several OD<sub>600</sub> values to find an optimal condition for protein expression. SDS-PAGE would be performed for rough estimation of protein amounts. </li>
-              <li> Purify His-tagged proteins - NahR (<i>fig. 1</i>), GFP1-9 (<i>fig. 3</i>) and GFP10-hER-α LBD-GFP11 (<i>fig. 6</i>), with Immobilized Metal ions Affinity Chromatography (IMAC) and thereafter perform protein concentration measurements using spectrophotometer.</li>
-              <li> Using fluorometer to measure fluorescence signal of sfGFP (<i>fig. 2</i>) and GFP1-9 (<i>fig. 3</i>).</li>
-              <li> Investigate the expression rate of sfGFP (<i>fig. 4</i>) and GFP1-9 (<i>fig. 5</i>) by using several concentrations of inducer salicylate as well as examine the leaky expression in absence of salicylate. </li>
-              <li> Use tamoxifen as an antagonistic ligand to investigate whether the conformational change of the GFP10-hER-α LBD-GFP11 construct happens. The conformational change causing reassembly of the tripartite split GFP would result in fluorescence signal, measured with fluorometer. The same experiment would be performed without added tamoxifen in order to see whether the conformational change is needed for the tripartite split GFP to reassemble.</li>
-            </ul>
-          </p>
-        </section>
       </div>
     </div>
   </div>
