@@ -1,36 +1,37 @@
+/******************** FOOTER ********************/
+/* Sponsors */
 .sponsors {
+  margin: 0 auto;
+  padding: 75px;
+  background-color: #333;
   text-align: center;
-  background-color: @gray-white;
-  box-shadow: inset 0 4px 8px -6px grey;
-
-  section {
-    margin-top: @common-padding;
-    margin-bottom: @common-padding;
-  }
-
-  article {
-    padding: @common-padding;
-  }
-
-  .sponsors-large {
-    img {
-      max-height: 200px;
-      max-width: 100%;
-    }
-  }
-
-  .sponsors-small {
-    img {
-      max-height: 100px;
-      max-width: 100%;
-    }
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
-  }
 }
 
+.sponsors img {
+  display: inline-block;
+  margin: 0 50px;
+  vertical-align: middle;
+}
+
+/* Footer */
+footer {
+  display: block;
+  width: 100%;
+  background-color: #222;
+  color: #fff;
+}
+
+#footer-wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+footer p {
+  margin: 0;
+  padding: 20px;
+}
+
+/* Footer */
 footer.footer {
   background-color: @gray-darker;
   color: @gray-light;
@@ -38,12 +39,8 @@ footer.footer {
   padding-bottom: @footer-padding;
 
   h1, h2, h3, h4, h5, h6 {
+    font-size: 18px;
     color: fade(@gray-light, 60%);
-  }
-
-  section{
-    padding-top: @footer-padding;
-    padding-bottom: @footer-padding;
   }
 
   ul {
@@ -54,6 +51,7 @@ footer.footer {
   }
 
   a {
+    font-size: 14px;
     transition: color 0.1s;
     color: @gray-light;
     &:hover {
@@ -63,7 +61,7 @@ footer.footer {
   }
 
   .copyright {
-    text-align: center;
+    padding-top: 50px;
     color: fade(@gray-light, 60%);
   }
 }
