@@ -10,11 +10,11 @@
 <div class="container">
   <ul class="nav nav-pills nav-auto-stacked">
     <li role="presentation" class="active"><a href="/Team:Lund/Design">Overview</a></li>
-    <li role="presentation"><a href="/Team:Lund/Design/Approach">Approach</a></li>
+    <!-- <li role="presentation"><a href="/Team:Lund/Design/Approach">Approach</a></li> -->
     <li role="presentation"><a href="/Team:Lund/Design/Theory">Theory</a></li>
     <li role="presentation"><a href="/Team:Lund/Design/Design">Design</a></li>
     <li role="presentation"><a href="/Team:Lund/Design/Experiments">Experiments</a></li>
-    <!-- <li role="presentation"><a href="/Team:Lund/Design/References">References</a></li> -->
+    <li role="presentation"><a href="/Team:Lund/Design/References">References</a></li>
   </ul>
 </div>
 
@@ -24,21 +24,98 @@
       <div class="row">
         <div class="col-lg-8">
           <h3 class="section-heading">Overview</h3>
-          <p></p>
+          <p>
+            In this section we describe the approach we have taken in our project. We start by explaining the what, why and how of our project and proceed by describing an intended user scenario. To read about the theoretical details, such as how this this works or for a short review of the scientific background, see the <a href="">theory</a> section. To find out more about how we have designed the biology and experiments of our project, see the <a href="">design</a> and <a href="">experiments</a> section respectively.
+          </p>
         </div>
 
-        <div class="col-lg-4">
-          <figure>
-            <img class="img-responsive center-block" src="">
-          </figure>
-        </div>
+
       </div>
 
       <div class="row">
         <div class="col-lg-8">
-          <p></p>
+          <h3 class="section-heading">Project idea</h3>
+          <p>
+            As described in the <a href="">project description</a>, one major bottleneck in the microbial production of many bioproducts is the amount of oxygen that is able to dissolve into the growth medium. Clearly, this issue requires no more explanation than that for any organization, the product of interest must be produced in sufficient quantities in order to be practical, be it enzymes, biofuels or pharmaceuticals.
+          </p>
+
+          <p>
+            The approach we have taken to combat this is independent of any environmental variables. By modifying the organisms to co-express Vitreoscilla hemoglobin (VHb) along with the desired product, the oxygen uptake is increased. This allows the cells to utilize more carbon sources and consequently produce more proteins under low oxygen conditions.
+          </p>
+
+          <p>
+            However, with this approach, a problem arises. How much hemoglobin should be co-expressed? Obviously, expressing too much will deplete the cells resources to produce the other, more valuable protein and expressing too little will leave the benefits underutilized. As illustrated in fig. 1, the best level of expression should be somewhere in between.
+          </p>
+
+          <p>
+            We are tackling this additional issue by directly leveraging the power of synthetic biology. By utilizing the library of constitutive Anderson promoters, a set of inserts encoding VHb can be created which expressed the protein at different levels. In this way, one is able to both harness and fine tune the benefits of VHb.
+          </p>
+
+        <h3 class="section-heading">Scenario</h3>
+          <p>
+            A hypothetical user scenario using our project is illustrated in fig. 2. Given a protein of interest, the first step is to create a library of vectors containing both the gene encoding the target protein and VHb, with the latter expressed under various promoter strengths. This is illustrated by the upper part of the figure where the plasmids are denoted pVHB1, pVHB2 and pVHB3. The plasmids are then screened for the best yield, where the best performing vector is further tested for upscaling. Once accomplished, the plasmid is ready to be used for its final intended application.
+          </p>
+
+        <h3 class="section-heading">Applications</h3>
+          <p>
+            The practical benefits of VHb co-expression has been harnessed in order to increase the production of proteins[1][2]and growth of rice [3], maize [4] and the tobacco plant [5]. VHb can also be used in bioremediation of toxic compounds such as textile dyes [6] and aromatic compounds [7].
+          </p>
+
+          <b>Enzymes</b>
+          <p>β-galactosidase is a commonly used enzyme in removing lactose from milk and making it drinkable for more than half of the world’s population [8]. Wu et al [1] managed to increase the production of this enzyme by 9.9% under non-limiting aeration proving the benefit of VHb co-expression. The used host organism Pichia pastoris demonstrated an improved oxygen uptake rate by 28.2% when grown in shake flasks. Another industrial enzyme, ɑ-amylase, was also expressed along with VHb [2]. An 18% increase of the enzyme concentration was noted when cultivated in a bioreactor under non-limiting aeration. This strengthens the argument that VHb can emitt similar benefits when scaling up the process.</p>
+
+          <b>Plants</b>
+          <p>Expression of VHb has also been studied in plants and shown to induce physiological changes. Wang et al [9] managed to successfully integrate the VHb gene into Arabidopsis thaliana. Various things happened happened. Germination time decreased significantly and the plants were substantially taller with more leaves. Submergence test to simulate flooding conditions was also conducted between the VHb strain and its WT counterpart. The VHb strain displayed greener color with minimal leaf necrosis while the WT had yellow undesired seedlings and visible shrinkage. </p>
+
+          <p>Water-logging is a common issue in agriculture where water saturates the roots of the plant. About 6 to 10 million hectares of land in India suffer from this [10]. In 2011, the average crop yield of rice, cereals and wheats in India was 2636 kg/hectare according to the Department of Agriculture & Cooperation [11]. To put this in perspective, 6 to 10 millions of hectares equals approximately 16 000 to 26 000 million kg of food is being affected by water-logging. VHb co-expression can thus be a viable solution to alleviate this issue. VHb could also have collateral effects by also improving the biomass content of plants [5][12]</p>
+
+
+          <b>Bioremediation</b>
+          <p>Contamination of soil and groundwater from pharmaceutical residues [13], petroleum [14], aromatic hydrocarbons [15], organic dyes [16], pesticides [17] and heavy metals [18] can lead to serious disorders in the domestic microbial flora [19] and human population [20]. Bioremediation is an environmentally friendly solution to this issue and is used to treat heavily contaminated sites [21]. A frequent issue during bioremediation is the lack of oxygen in the environment where it is taking place. VHb has been used in various bioremediation scenarios for just this reason.</p>
+
+          <p>Kahraman and Geckil (7) proposed a potential solution for this problem by expressing VHb in yeast capable of using benzene, toluene and xylene as carbon sources. Hypoxic conditions were emulated by limiting the oxygen supply and significant degradation abilities of the contaminants were observed. </p>
+
+          <p>To avoid the issue of releasing engineered bioremediating organisms into a polluted environment Urgun-Demirtas [22] used a membrane bioreactor commonly used in waste-water treatment. They studied the degradation of 2-chlorobenzoic acid by VHb transformed Burkholderia cepacia. The transformed cells reached higher cell densities in respect to their native counterparts (3.2–5.4 g/L) and (2.8–4.7 g/L) respectively. Survivability in hypoxic oxygen concentrations was also increased.</p>
+
+          <h3 class="section-heading">References</h3>
+          <ol class="references">
+
+          <li>[1] Wu, J., and Fu, W. (2012) Intracellular co-expression of Vitreoscilla hemoglobin enhances cell performance and β-galactosidase production in Pichia pastoris. Journal of Bioscience and Bioengineering 113, 332-337.</li>
+          <li>[2] Suthar, D., and Chattoo, B. (2006) Expression of Vitreoscilla hemoglobin enhances growth and levels of α-amylase in Schwanniomyces occidentalis. Applied Microbiology and Biotechnology 72, 94-102.</li>
+          <li>[3] Cao, M., Huang, J., Wei, Z., Yao, Q., Wan, C., and Lu, J. (2004) Engineering Higher Yield and Herbicide Resistance in Rice by -Mediated Multiple Gene Transformation. Crop Science 44, 2206.</li>
+          <li>[4] Du, H., Shen, X., Huang, Y., Huang, M., and Zhang, Z. (2016) Overexpression of Vitreoscilla hemoglobin increases waterlogging tolerance in Arabidopsis and maize. BMC Plant Biology 16.</li>
+          <li>[5] Holmberg, N., Lilius, G., Bailey, J., and Bülow, L. (1997) Transgenic tobacco expressing Vitreoscilla hemoglobin exhibits enhanced growth and altered metabolite production. Nature Biotechnology 15, 244-247.</li>
+          <li>[6] Zhang, Z., Li, W., Li, H., Zhang, J., Zhang, Y., Cao, Y., Ma, J., and Li, Z. (2015) Construction and Characterization of Vitreoscilla Hemoglobin (VHb) with Enhanced Peroxidase Activity for Efficient Degradation of Textile Dye. Journal of Microbiology and Biotechnology 25, 1433-1441.</li>
+          <li>[7] Kahraman, H., and Geckil, H. (2005) Degradation of Benzene, Toluene and Xylene by Pseudomonas aeruginosa Engineered with the Vitreoscilla Hemoglobin Gene. Engineering in Life Sciences 5, 363-368.</li>
+          <li>[8] Heyman, M. (2006) Lactose Intolerance in Infants, Children, and Adolescents. PEDIATRICS 118, 1279-1286.</li>
+          <li>[9] Wang, Z., Xiao, Y., Chen, W., Tang, K., and Zhang, L. (2009) Functional expression of Vitreoscilla hemoglobin (VHb) in Arabidopsis relieves submergence, nitrosative, photo-oxidative stress and enhances antioxidants metabolism. Plant Science 176, 66-77.</li>
+          <li>[10] Bowonder, B., Ramana, K., and Rajagopal, R. (1986) Waterlogging in irrigation projects. Sadhana 9, 177-190.</li>
+          <li>[11] Department of Agriculture & Cooperation. (2014) Yield per Hectare of Major Crops. Available at: https://data.gov.in/catalog/yield-hectare-major-crops </li>
+          <li>[12] Cao, M., Huang, J., Wei, Z., Yao, Q., Wan, C., and Lu, J. (2004) Engineering Higher Yield and Herbicide Resistance in Rice by -Mediated Multiple Gene Transformation. Crop Science 44, 2206.</li>
+          <li>[13] Wojcieszyńska, D., Domaradzka, D., Hupert-Kocurek, K., and Guzik, U. (2014) Bacterial degradation of naproxen – Undisclosed pollutant in the environment. Journal of Environmental Management 145, 157-161.</li>
+          <li>[14] Smułek, W., Zdarta, A., Guzik, U., Dudzińska-Bajorek, B., and Kaczorek, E. (2015) Rahnella sp. strain EK12: Cell surface properties and diesel oil biodegradation after long-term contact with natural surfactants and diesel oil. Microbiological Research 176, 38-47.</li>
+          <li>[15] Rodgers-Vieira, E., Zhang, Z., Adrion, A., Gold, A., and Aitken, M. (2015) Identification of Anthraquinone-Degrading Bacteria in Soil Contaminated with Polycyclic Aromatic Hydrocarbons. Applied and Environmental Microbiology 81, 3775-3781.</li>
+          <li>[16] Mohamed, A., El-Sayed, R., Osman, T., Toprak, M., Muhammed, M., and Uheida, A. (2016) Composite nanofibers for highly efficient photocatalytic degradation of organic dyes from contaminated water. Environmental Research 145, 18-25.</li>
+          <li>[17] Moreno-Medina, D.A., Sánches-Salinas, E., Ortiz-Hernández, L. (2014) Removal of Methyl Parathion and Coumaphos Pesticides by a Bacterial Consortium Immobilized in Luffa Cylindrica. Revista Internacional de Contaminación Ambiental 30, 51-63</li>
+          <li>[18] Wasilkowski, D., Mrozik, A., Piotrowska-Seget, Z., Krzyżak, J., Pogrzeba, M., and Płaza, G. (2014) Changes in Enzyme Activities and Microbial Community Structure in Heavy Metal-Contaminated Soil underin SituAided Phytostabilization. CLEAN - Soil, Air, Water 42, 1618-1625.</li>
+          <li>[19] (2) Simeonov, L., and Sargsyan, V. (2008) Soil chemical pollution, risk assessment, remediation and security. Springer, Dordrecht.</li>
+          <li>[20] Science Communication Unit, University of the West of England, Bristol (2013). Science for Environment Policy In-depth Report: Soil Contamination: Impacts on Human Health. Report produced for the European Commission DG Environment, September 2013. Available at: http://ec.europa.eu/science-environment-policy </li>
+          <li>[21] Dzionek, A., Wojcieszyńska, D., and Guzik, U. (2016) Natural carriers in bioremediation: A review. Electronic Journal of Biotechnology 23, 28-36.</li>
+          <li>[22] Urgun-Demirtas, M., Stark, B., and Pagilla, K. (2006) Comparison of 2-chlorobenzoic acid biodegradation in a membrane bioreactor by B. cepacia and B. cepacia bearing the bacterial hemoglobin gene. Water Research 40, 3123-3130.</li>
+          </ol>
+        </div>
+
+
+
+        <div class="col-lg-4">
+          <figure>
+            <img class="img-responsive center-block" src="http://2018.igem.org/wiki/images/6/62/T--Lund--design_approach.svg" style="width: 200%">
+            <figcaption>Figure 1: The approach.</figcaption>
+          </figure>
         </div>
       </div>
+
+
     </section>
   </div>
 </div>
