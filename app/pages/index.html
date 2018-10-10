@@ -44,6 +44,15 @@ header {
   padding: 75px 0;
 }
 
+#content-wrapper p {
+  border-bottom: 1px solid #cacaca;
+  padding-bottom: 10px;
+}
+
+#content-wrapper .fas {
+  margin-left: 5px;
+}
+
 .content-page {
   padding: 75px 0;
 }
@@ -54,13 +63,19 @@ header {
 }
 
 .btn {
-  background-color: #FC6C58;
-  color: #fff;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  color: #FC6C58;
 }
 
 .btn:hover {
-  background-color: #b95548;
-  color: #fff;
+  color: #862d21;
+}
+
+.bottom-cards p {
+  padding: 25px 0 10px 0;
+  width: 300px;
 }
 
 </style>
@@ -86,7 +101,7 @@ header {
       <div class="col-md-8">
         <h1>Our project</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        <button class="btn">Read more</button>
+        <button class="btn">Read more <i class="fas fa-arrow-right"></i></button>
       </div>
 
       <div class="col-md-4">
@@ -106,7 +121,7 @@ header {
       <div class="col-md-8">
         <h1>Our project</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-        <button class="btn">Read more</button>
+        <button class="btn">Read more <i class="fas fa-arrow-right"></i></button>
       </div>
 
     </div>
@@ -119,7 +134,7 @@ header {
       <div class="col-md-8">
         <h1>Our project</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        <button class="btn">Read more</button>
+        <button class="btn">Read more <i class="fas fa-arrow-right"></i></button>
       </div>
 
       <div class="col-md-4">
@@ -130,31 +145,33 @@ header {
   </div>
 
 
+<section class="bottom-cards">
   <div class="container content-page">
     <div class="row submenu">
       <div class="col-md-4">
         <h2>Human Practices</h2>
         <img  class="submenu_image" src="https://via.placeholder.com/300x200">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <button class="btn">Read more</button>
+        <button class="btn">Read more <i class="fas fa-arrow-right"></i></button>
       </div>
 
       <div class="col-md-4">
         <h2>Human Practices</h2>
         <img  class="submenu_image" src="https://via.placeholder.com/300x200">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <button class="btn">Read more</button>
+        <button class="btn">Read more <i class="fas fa-arrow-right"></i></button>
       </div>
 
       <div class="col-md-4">
         <h2>Human Practices</h2>
         <img  class="submenu_image" src="https://via.placeholder.com/300x200">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <button class="btn">Read more</button>
+        <button class="btn">Read more <i class="fas fa-arrow-right"></i></button>
       </div>
 
     </div>
   </div>
+</section>
 
 </div>
 <!-- ******************** SCRIPT START ******************** -->
