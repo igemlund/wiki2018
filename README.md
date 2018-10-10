@@ -14,4 +14,11 @@
 9. When you want to publish your changes, in Github Desktop enter short message describing what you've done and press "Commit to master". After that you have to press "Push origin" to make your changes available to everyone else.
 
 ## Editing files
+
 You can use whatever text editor you'd like. I recommend [VSCode](https://code.visualstudio.com/).
+
+## Publishing to Wiki
+
+1. Publish styles [http://2018.igem.org/Team:Lund/styles/wrapper](http://2018.igem.org/wiki/index.php?title=Team:Lund/styles/wrapper&action=edit)
+2. In template bump style cache param [http://2018.igem.org/Template:Lund](http://2018.igem.org/wiki/index.php?title=Template:Lund&action=edit)
+3. Publish page
