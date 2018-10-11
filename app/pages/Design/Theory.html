@@ -36,20 +36,22 @@ $(document).ready(function() {
 });
 </script>
 
-<header class="design-header">
+<div id="design-page">
+
+<header class="design-landing">
   <div class="container">
-    <h1 class="display">Design</h1>
+    <h1 class="design-landing-texts ">Design</h1>
   </div>
 </header>
 
 <div class="container">
   <ul class="nav nav-pills nav-auto-stacked">
     <li role="presentation"><a href="/Team:Lund/Design">Overview</a></li>
-    <!-- <li role="presentation"><a href="/Team:Lund/Design/Approach">Approach</a></li> -->
+    <li role="presentation"><a href="/Team:Lund/Design/Applications">Applications</a></li>
     <li role="presentation" class="active"><a href="/Team:Lund/Design/Theory">Theory</a></li>
     <li role="presentation"><a href="/Team:Lund/Design/Design">Design</a></li>
     <li role="presentation"><a href="/Team:Lund/Design/Experiments">Experiments</a></li>
-    <li role="presentation"><a href="/Team:Lund/Design/References">References</a></li>
+    <!-- <li role="presentation"><a href="/Team:Lund/Design/References">References</a></li> -->
   </ul>
 </div>
 
@@ -126,27 +128,31 @@ $(document).ready(function() {
     <div class="row">
       <div class="col-md-8">
         <h3 class="section-heading">References</h3>
-
-        <ol class="references">
-          <li>[1] Dikshit, K., Spaulding, D., Braun, A., and Webster, D. (1989) Oxygen Inhibition of Globin Gene Transcription and Bacterial Haemoglobin Synthesis in Vitreoscilla. Microbiology 135, 2601-2609.</li>
-          <li>[2] Stark, B., Dikshit, K., and Pagilla, K. (2012) The Biochemistry of Vitreoscilla hemoglobin. Computational and Structural Biotechnology Journal 3, e201210002.</li>
-          <li>[3] Wakabayashi, S., Matsubara, H., and Webster, D. (1986) Primary sequence of a dimeric bacterial haemoglobin from Vitreoscilla. Nature 322, 481-483.</li>
-          <li>[4] Dikshit, K., and Webster, D. (1988) Cloning, characterization and expression of the bacterial globin gene from Vitreoscilla in Escherichia coli. Gene 70, 377-386.</li>
-          <li>[5] Khosla, C., and Bailey, J. (1988) Heterologous expression of a bacterial haemoglobin improves the growth properties of recombinant Escherichia coli. Nature 331, 633-635.</li>
-          <li>[6] Wang S, Liu F, Hou Z, Zong G, Zhu X, Ling P. Enhancement of natamycin production on Streptomyces gilvosporeus by chromosomal integration of the Vitreoscilla hemoglobin gene (vgb) World J Microb Biot. 2014;30:1369–1376. doi: 10.1007/s11274-013-1561-4</li>
-          <li>[8] Wu, JM. and Fu, WC. (2012) Intracellular co-expression of Vitreoscilla hemoglobin enhances cell performance and β-galactosidase production in Pichia pastoris. J Biosci Bioeng 113(3), 332–337.</li>
-          <li>[9] Holmberg, N., Lilius, G., Bailey, J., and Bülow, L. (1997) Transgenic tobacco expressing Vitreoscilla hemoglobin exhibits enhanced growth and altered metabolite production. Nature Biotechnology 15, 244-247.</li>
-          <li>[10] Guan, B., Ma, H., Wang, Y., Hu, Y., Lin, Z., Zhu, Z., and Hu, W. (2010) Vitreoscilla Hemoglobin (VHb) Overexpression Increases Hypoxia Tolerance in Zebrafish (Danio rerio). Marine Biotechnology 13, 336-344.</li>
-          <li>[11] Rinaldi A. C., Bonamore A., Macone A., Boffi A., Bozzi A., Di Giulio A. (2006) Interaction of Vitreoscilla hemoglobin with membrane lipids. Biochemistry 45:4069–4076</li>
-          <li>[12] Ramandeep D., Hwang K. W., Raje M., Kim K.J., Stark B.C., Dikshit K.L., Webster D. A. (2001) Vitreoscilla hemoglobin: intracellular localization and binding to membranes. J. Biol. Chem. 277:24781–24789.</li>
-          <li>[13] Fish P. A., Webster D. A., Stark B. C. (2001) Vitreoscilla hemoglobin enhances the first step in 2,4-dinitrotoluene degradation in vitro and at low aeration in vivo. J. Mol. Catal. B. Enzym. 9:75–82.</li>
-          <li>[14] Lin J. M., Stark B. C., Webster D. A. (2003) Effects of Vitreoscilla hemoglobin on the 2,4-dinitrotoluene (DNT) dioxygenase activity of Burkholderia and on DNT degradation in two-phase bioreactors. J. Ind. Microbiol. Biotechnol. 30:362–368</li>
-          <li>[15] Dikshit R. P., Dikshit K. L., Liu Y., Webster D. A. (1992) The bacterial hemoglobin from Vitreoscilla can support the aerobic growth of E. coli lacking terminal oxidases. Arch. Biochem. Biophys. 293:241–245.</li>
-          <li>[16] Geckil H., Gencer S., Kahraman H., Erenler S. O.(2003) Genetic engineering of Enterobacter aerogenes with the Vitreoscilla hemoglobin gene: cell growth, survival, and antioxidant enzyme status under oxidative stress. Res. Microbiol. 154:425–431.</li>
-          <li>[17] Kvist M., Ryabova E. S., Nordlander E., Bulow L. (2007) An investigation of the peroxidase activity of Vitreoscilla hemoglobin. J. Biol. Inorg. Chem. 12:324–334.</li>
-          <li>[18] Tsai PS, Hatzimanikatis V, Bailey JE. (1996). Effect of Vitreoscilla Hemoglobin Dosage on Microaerobic Escherichia coli Carbon and Energy Metabolism. Biotechnology and Bioengineering, 49, 139-150.</li>
-          <li>[19] Tarricone, C., Galizzi, A., Coda, A., Ascenzi, P., and Bolognesi, M. (1997) Unusual structure of the oxygen-binding site in the dimeric bacterial hemoglobin from Vitreoscilla sp. Structure 5, 497-507.</li>
-      </ol>
+        <button id="refBtn" class="btn btn-default" type="button" data-toggle="collapse" data-target="#ref" aria-expanded="false" aria-controls="ref">
+          Show
+        </button>
+        <div class="collapse" id="ref">
+          <ol class="references">
+            <li>[1] Dikshit, K., Spaulding, D., Braun, A., and Webster, D. (1989) Oxygen Inhibition of Globin Gene Transcription and Bacterial Haemoglobin Synthesis in Vitreoscilla. Microbiology 135, 2601-2609.</li>
+            <li>[2] Stark, B., Dikshit, K., and Pagilla, K. (2012) The Biochemistry of Vitreoscilla hemoglobin. Computational and Structural Biotechnology Journal 3, e201210002.</li>
+            <li>[3] Wakabayashi, S., Matsubara, H., and Webster, D. (1986) Primary sequence of a dimeric bacterial haemoglobin from Vitreoscilla. Nature 322, 481-483.</li>
+            <li>[4] Dikshit, K., and Webster, D. (1988) Cloning, characterization and expression of the bacterial globin gene from Vitreoscilla in Escherichia coli. Gene 70, 377-386.</li>
+            <li>[5] Khosla, C., and Bailey, J. (1988) Heterologous expression of a bacterial haemoglobin improves the growth properties of recombinant Escherichia coli. Nature 331, 633-635.</li>
+            <li>[6] Wang S, Liu F, Hou Z, Zong G, Zhu X, Ling P. Enhancement of natamycin production on Streptomyces gilvosporeus by chromosomal integration of the Vitreoscilla hemoglobin gene (vgb) World J Microb Biot. 2014;30:1369–1376. doi: 10.1007/s11274-013-1561-4</li>
+            <li>[8] Wu, JM. and Fu, WC. (2012) Intracellular co-expression of Vitreoscilla hemoglobin enhances cell performance and β-galactosidase production in Pichia pastoris. J Biosci Bioeng 113(3), 332–337.</li>
+            <li>[9] Holmberg, N., Lilius, G., Bailey, J., and Bülow, L. (1997) Transgenic tobacco expressing Vitreoscilla hemoglobin exhibits enhanced growth and altered metabolite production. Nature Biotechnology 15, 244-247.</li>
+            <li>[10] Guan, B., Ma, H., Wang, Y., Hu, Y., Lin, Z., Zhu, Z., and Hu, W. (2010) Vitreoscilla Hemoglobin (VHb) Overexpression Increases Hypoxia Tolerance in Zebrafish (Danio rerio). Marine Biotechnology 13, 336-344.</li>
+            <li>[11] Rinaldi A. C., Bonamore A., Macone A., Boffi A., Bozzi A., Di Giulio A. (2006) Interaction of Vitreoscilla hemoglobin with membrane lipids. Biochemistry 45:4069–4076</li>
+            <li>[12] Ramandeep D., Hwang K. W., Raje M., Kim K.J., Stark B.C., Dikshit K.L., Webster D. A. (2001) Vitreoscilla hemoglobin: intracellular localization and binding to membranes. J. Biol. Chem. 277:24781–24789.</li>
+            <li>[13] Fish P. A., Webster D. A., Stark B. C. (2001) Vitreoscilla hemoglobin enhances the first step in 2,4-dinitrotoluene degradation in vitro and at low aeration in vivo. J. Mol. Catal. B. Enzym. 9:75–82.</li>
+            <li>[14] Lin J. M., Stark B. C., Webster D. A. (2003) Effects of Vitreoscilla hemoglobin on the 2,4-dinitrotoluene (DNT) dioxygenase activity of Burkholderia and on DNT degradation in two-phase bioreactors. J. Ind. Microbiol. Biotechnol. 30:362–368</li>
+            <li>[15] Dikshit R. P., Dikshit K. L., Liu Y., Webster D. A. (1992) The bacterial hemoglobin from Vitreoscilla can support the aerobic growth of E. coli lacking terminal oxidases. Arch. Biochem. Biophys. 293:241–245.</li>
+            <li>[16] Geckil H., Gencer S., Kahraman H., Erenler S. O.(2003) Genetic engineering of Enterobacter aerogenes with the Vitreoscilla hemoglobin gene: cell growth, survival, and antioxidant enzyme status under oxidative stress. Res. Microbiol. 154:425–431.</li>
+            <li>[17] Kvist M., Ryabova E. S., Nordlander E., Bulow L. (2007) An investigation of the peroxidase activity of Vitreoscilla hemoglobin. J. Biol. Inorg. Chem. 12:324–334.</li>
+            <li>[18] Tsai PS, Hatzimanikatis V, Bailey JE. (1996). Effect of Vitreoscilla Hemoglobin Dosage on Microaerobic Escherichia coli Carbon and Energy Metabolism. Biotechnology and Bioengineering, 49, 139-150.</li>
+            <li>[19] Tarricone, C., Galizzi, A., Coda, A., Ascenzi, P., and Bolognesi, M. (1997) Unusual structure of the oxygen-binding site in the dimeric bacterial hemoglobin from Vitreoscilla sp. Structure 5, 497-507.</li>
+        </ol>
+        </div>
       </div>
     </div>
     <!-- <section>
@@ -208,6 +214,6 @@ $(document).ready(function() {
 
   </div>
 </div>
-
+</div>
 </html>
 {{Lund/footer}}
