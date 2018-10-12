@@ -1,0 +1,69 @@
+{{Lund}}
+<html>
+<div id="model-page">
+<script type="text/javascript">
+  $('#navbar').addClass('navbar-transparent');
+</script>
+
+<header class="modeling-landing">
+  <div class="container">
+    <h1 class="model-landing-texts">Modeling</h1>
+  </div>
+</header>
+
+<div class="container">
+  <ul class="nav nav-pills nav-auto-stacked">
+    <li role="presentation" class="active"><a href="/Team:Lund/Model/Hemoglobin/Overview">Overview</a></li>
+    <li role="presentation" class="active"><a href="/Team:Lund/Model/Hemoglobin/Introduction">Introduction</a></li>
+    <li role="presentation" class="active"><a href="/Team:Lund/Model/Hemoglobin/MaterialMethod">Materials and methods</a></li>
+    <li role="presentation" class="active"><a href="/Team:Lund/Model/Hemoglobin/Results">Results</a></li>
+
+    <!-- <li role="presentation"><a href="/Team:Lund/Modeling/ModelDerivation">Model derivation</a></li>
+    <li role="presentation"><a href="/Team:Lund/Modeling/ParameterEstimation">Parameter estimation</a></li>
+    <li role="presentation"><a href="/Team:Lund/Modeling/Implementation">Implementation</a></li> -->
+  </ul>
+</div>
+
+<div id="modeling" class="content-wrapper under-nav text-layout">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10">
+        <section>
+          <h3 class="section-heading">Overview</h3>
+
+          <p> </p>
+        </section>
+
+
+        <section>
+          <h3 class="section-heading">References</h3>
+          <button id="refBtn" class="btn btn-default" type="button" data-toggle="collapse" data-target="#ref" aria-expanded="false" aria-controls="ref">
+            Show
+          </button>
+          <div class="collapse" id="ref">
+            <ol class="references">
+              <li>[1] Larentis, A., Nicolau, J., Esteves, G., Vareschini, D., de Almeida, F., dos Reis, M., Galler, R. and Medeiros, M. (2014). Evaluation of pre-induction temperature, cell growth at induction and IPTG concentration on the expression of a leptospiral protein in E. coli using shaking flasks and microbioreactor. <i>BMC Research Notes</i>, 7(1), p.671.</li>
+              <li>[2] Zi, Z. (2011). Sensitivity analysis approaches applied to systems biology models. <i>IET Systems Biology</i>, 5(6), pp.336-346.</li>
+              <li>[3] Kafri, M., Metzl-Raz, E., Jona, G. and Barkai, N. (2016). The Cost of Protein Production. <i>Cell Reports</i>, 14(1), pp.22-31.</li>
+            </ol>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+  $(function() {
+    $('#ref').on('shown.bs.collapse', function () {
+       $("#refBtn").text('Hide');
+    });
+
+    $('#ref').on('hidden.bs.collapse', function () {
+       $("#refBtn").text('Show');
+    });
+  });
+</script>
+
+</html>
+{{Lund/footer}}
