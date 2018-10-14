@@ -1,25 +1,69 @@
-// .modeling-landing {
-//   .display-section;
-//   .display-background('http://2017.igem.org/wiki/images/f/f9/T--Lund--Model.jpg', 60%);
-// }
-#model-page {
-  .design-header {
-    .display-section;
-    .display-background('http://2017.igem.org/wiki/images/0/04/T--Lund--Design.jpg', 70%);
-  }
+#modeling-bg {
+	background-color: #fc6c58;
+	min-height: 100vh;
+	width: 100%;
+	position: relative;
+	padding-top: 100px;
+	padding-bottom: 100px;
 
-  .modeling-landing {
+	#modeling-title {
+		color: white;
+		margin-left: 25%;
+	}
 
-    background: linear-gradient(to bottom right, #862d21, #FC6C58);
-    height: 40vh;
+	.modeling-textbox {
+		color: white;
+		width: 400px;
+		display: inline-block;
+		vertical-align: middle;
+	}
 
-    .model-landing-texts {
-      position: absolute;
-      width: 100%;
-      top: 20vh;
-      text-align: left;
-      color: #fff;
-    }
-  }
+	.modeling-network-image {
+		display: inline-block;
+		width: calc(100vw - 500px);
+		vertical-align: middle;
+	}
 
+	#modeling-hemoglobin-text, #modeling-growthcurves-text {
+		margin-left: 50px;
+	}
+
+	@media only screen and (min-width : 768px) {
+		#modeling-flowcytometry-text {
+			text-align: right;
+			margin-right: 50px;
+			margin-left: 20px;
+		}
+	}
+
+	@media only screen and (max-width : 768px) {
+		.modeling-textbox, .modeling-network-image {
+			display: block;
+			width: 90vw;
+		}
+
+		#modeling-flowimage-above {
+			display: block !important;
+		}
+		#modeling-flowimage-below {
+			display: none;
+		}
+
+		.modeling-textbox {
+			width: calc(100vw - 40px);
+			margin-left: 15px !important;
+			margin-right: 15px !important;
+		}
+
+		#modeling-title {
+			text-align: center;
+			margin-left: 0;
+		}
+	}
+
+	#modeling-flowimage-above {
+		display: none;
+	}
+
+	
 }
