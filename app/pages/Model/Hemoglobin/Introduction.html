@@ -7,20 +7,16 @@
 
 <header class="modeling-landing">
   <div class="container">
-    <h1 class="model-landing-texts">Modeling</h1>
+    <h1 class="model-landing-texts">Introduction</h1>
   </div>
 </header>
 
 <div class="container">
   <ul class="nav nav-pills nav-auto-stacked">
-    <li role="presentation"><a href="/Team:Lund/Model/Hemoglobin/Overview">Overview</a></li>
+    <li role="presentation"><a href="/Team:Lund/Model/Hemoglobin">Overview</a></li>
     <li role="presentation" class="active"><a href="/Team:Lund/Model/Hemoglobin/Introduction">Introduction</a></li>
     <li role="presentation"><a href="/Team:Lund/Model/Hemoglobin/MaterialMethod">Materials and methods</a></li>
     <li role="presentation"><a href="/Team:Lund/Model/Hemoglobin/Results">Results</a></li>
-
-    <!-- <li role="presentation"><a href="/Team:Lund/Modeling/ModelDerivation">Model derivation</a></li>
-    <li role="presentation"><a href="/Team:Lund/Modeling/ParameterEstimation">Parameter estimation</a></li>
-    <li role="presentation"><a href="/Team:Lund/Modeling/Implementation">Implementation</a></li> -->
   </ul>
 </div>
 
@@ -29,9 +25,26 @@
     <div class="row">
       <div class="col-lg-10">
         <section>
-          <h3 class="section-heading">Overview</h3>
+          <h3 class="section-heading">Background</h3>
 
-          <p> </p>
+          <p>
+            With the worldwide blood shortage, there has evolved a big demand for blood substitutes. One possible solution, which is independent of today’s reliance of blood donors is the use of recombinant hemoglobin based oxygen carriers (rHBOCs). These substitutes consists of concentrated solutions of purified, acellular human hemoglobin which has been heterologously expressed in a non-native host. The advantages over human donated blood are numerous and include universal compatibility, longer shelf life, reduced risk of disease transmission as well as enhanced oxygen delivery. However, despite the many advantages, rHBOCs are still not being used in practice. This is mainly due to cases of hypertension caused by globin denaturation, misfolding, heme orientational disorder and heme loss. In addition, there are numerous downstream processing problems which includes the removal of lipopolysaccharides (when expressed in e.g. E. coli), protein impurities and free porphyrins.
+          </p>
+
+          <p>
+            These issues are mainly caused by the direct injection of free hemoglobin into the bloodstream, of which the environment differs significantly from inside the native red blood cells. As such, many of the issues are related to the interaction of hemoglobin with the ambient environment, either directly or after a subsequent decomposition. With this, several properties must be modified in order to make hemoglobin a viable blood substitute. This includes the reduction of nitrogen oxide scavenging as well as reducing oxidative reactivity and increasing the stability of the protein. In addition, the oxygen binding affinity must be modified accordingly to the new environment, which in practice means it must be lowered.
+          </p>
+
+          <p>
+            The approaches to solve the related problems has historically been via rational design strategies of which operative parts of the hemoglobin are mutated.  Major achievements include, but are not limited to the introduction of di-𝛼 mutation which merges the alpha subunits together via a glycine linker, preventing dimeric dissociating, and the V1M mutation which facilitates bacterial translation without cleaving the N-terminal methionine. However, despite the advances there is still no way of achieving high stability without compromising other properties such has nitrogen oxide scavenging and oxygen binding affinity. To this end, there is no approved formulation of rHBOCs for the use of blood substitutes.
+          </p>
+
+
+          <h3 class="section-heading">Approach</h3>
+
+          <p>
+            We take a data driven approach in the development of rHBOCs and state our objective as follows: given a set of hemoglobin mutants with classified oxygen affinities, we model the affinity based on correlations with the physicochemical properties of the primary sequence of the alpha-beta dimer. Based on the model, we rank all possible single mutation variants based on the probability of reducing the oxygen affinity  and select a handful of the top candidates based on qualitative insight for further wet lab investigation. The entire procedure is illustrated in fig. 3.
+          </p>
         </section>
 
 
