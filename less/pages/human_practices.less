@@ -4,6 +4,7 @@
 	width: 100%;
 	position: relative;
 	padding-top: 30px;
+	padding-bottom: 50px;
 
 	#hp-ipbg {
 		position: absolute;
@@ -54,6 +55,22 @@
 		color: white;
 	}
 
+	#hp-maintext {
+		width: 1000px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 80px;
+		background-color: white;
+		border-radius: 30px;
+		padding: 30px;
+	}
+
+	@media only screen and (max-width : 1220px) {
+		#hp-ip {
+			margin-left: 5%;
+		}
+    }
+
 	@media only screen and (max-width : 1080px) {
 		#hp-iptitle {
 			font-size: 1.8rem;
@@ -66,7 +83,35 @@
 			left: 0;
 			//top: 60px;
 		}
+
+
     }
+
+	@media only screen and (max-width : 1080px) {
+		#hp-ip {
+			margin-left: 15px;
+			width: 720px;
+			height: 900px;
+		}
+
+		#hp-maintext {
+			width: 700px;
+		}
+
+		#hp-ip-evaluation {
+			left: 220px;
+			top: 70px;
+		}
+		#hp-ip-scalingup {
+			left: 90px;
+			top: 150px;
+		}
+		#hp-ip-industryapplication {
+			left: 300px;
+			top: 220px;
+		}
+    }
+
 
     @media only screen and (max-width : 670px) {
 		#hp-iptitle {
