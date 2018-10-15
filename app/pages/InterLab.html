@@ -1,8 +1,9 @@
 {{Lund}}
 <html>
-<header class="interlab-header">
+<div id="interlab-page">
+<header class="interlab-landing">
   <div class="container">
-    <h1 class="display">InterLab</h1>
+    <h1 class="description-landing-texts">InterLab</h1>
   </div>
 </header>
 
@@ -10,146 +11,137 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-10">
         <section>
           <h3 class="section-heading">Introduction</h3>
-          <p>Since synthetic biology is built on engineering principles, reproducibility of the experiments and reliability of its standard parts are crucial for building predictable biological machines. This year’s InterLab study required all participants to produce comparable units for measuring the fluorescence of green fluorescent protein (GFP) following the same protocol to test the reproducibility of the experiment. Eight devices encoding GFP under three different promoters as well as two types of ribosome binding sites (RBS) were tested for their reliable gene expression in <em>Escherichia coli</em>.</p>
+          <p>
+            InterLab is a worldwide laborative collaboration where repeatable and reliable results is of very high importance for comparability. In synthetic biology one of the most important signalling proteins is green fluorescent protein (GFP), which fluoresces when exposed to ultraviolet light. Each participating team expressed GFP under promoters of varying strength and compared their measurements to different calibrations.
+          </p>
         </section>
+
         <section>
           <h3 class="section-heading">Materials and Methods</h3>
-          <ul>
-            <li>
-              Eight devices, listed in table 1 inserted in pSB1C3 provided by iGEM Headquarters:
-              <ul>
-                <li>Positive Control (<a href="http://parts.igem.org/Part:BBa_I20270" target="_blank">BBa_I20270</a>)</li>
-                <li>Negative Control (<a href="http://parts.igem.org/Part:BBa_R0040" target="_blank">BBa_R0040</a>)</li>
-                <li>Test Device 1 (<a href="http://parts.igem.org/Part:BBa_J364000" target="_blank">BBa_J364000</a>)</li>
-                <li>Test Device 2 (<a href="http://parts.igem.org/Part:BBa_J364001" target="_blank">BBa_J364001</a>)</li>
-                <li>Test Device 3 (<a href="http://parts.igem.org/Part:BBa_J364002" target="_blank">BBa_J364002</a>)</li>
-                <li>Test Device 4 (<a href="http://parts.igem.org/Part:BBa_J364003" target="_blank">BBa_J364003</a>)</li>
-                <li>Test Device 5 (<a href="http://parts.igem.org/Part:BBa_J364004" target="_blank">BBa_J364004</a>)</li>
-                <li>Test Device 6 (<a href="http://parts.igem.org/Part:BBa_J364005" target="_blank">BBa_J364005</a>)</li>
-              </ul>
-            </li>
-            <li>Expression host:<em> E. coli</em> DH5-α</li>
-            <li>Microtiter plate: 96 well plate, transparent with round base, Sarstedt </li>
-            <li>Plate reader for fluorescence measurements: Fluoroskan Ascent, Thermo Labsystems  </li>
-            <li>Plate reader for OD<sub>595</sub> measurements: Multiskan ascent, Thermo Electron Corporation</li>
-          </ul>
+          The three different calibration methods were:
+          <br><br>
+
+          <p>1. The absorbance at 600 nm was measured for Ludox CL-X of different known concentrations in a plate reader, and OD600 measurements from a spectrophotometer were used to create a conversion factor between absorbance measured by the plate reader and OD600.</p>
+          <p>2. To obtain a standard curve showing the relationship between Abs600 in the plate reader and actual cell count, absorbance of silica beads of the same size as the E. coli cells were measured at different known concentrations. </p>
+          <p>3. The fluorescence intensity of the salt fluorescein, which has similar excitation and emission spectra as GFP, was used to make a standard curve. This standard curve was then used to convert GFP fluorescence measurements into equivalent concentrations of fluorescein, a value which can be used to compare data between different labs regardless of what equipment they use for their measurements.</p>
+
+          <p>All calibrations were done using flat bottomed black 96-well plates. </p>
+
+          <p>
+            <i>E. coli</i> DH5-α was transformed with 8 plasmids, each containing different inserts. The only difference between the inserts was the promoter, and for the positive control also the ribosome binding site (Table 1). For full description of the parts visit this page and search for them as stated in Table 1, column “Biobrick”. The cells were incubated according to iGEM measurements protocol for plate readers. The cell density at 600 nm and fluorescence were measured both before and after the incubation.
+          </p>
 
           <table class="table table-bordered">
             <caption>Table 1: All tested devices with promoter, promoter strength and RBS</caption>
             <thead>
               <tr>
                 <th>Test device</th>
-                <th>Promoter</th>
-                <th>Promoter strength</th>
+                <th>Biobrick</th>
+                <th>Promoter strength (a.u)</th>
                 <th>RBS</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Negative control</td>
-                <td>TetR repressible promoter</td>
-                <td>medium</td>
+                <td>BBa_R0040</td>
+                <td>Medium</td>
                 <td>-</td>
               </tr>
               <tr>
                 <td>Positive control </td>
-                <td>J23151</td>
-                <td> </td>
+                <td>BBa_I20270</td>
+                <td> 256</td>
                 <td>B0032</td>
               </tr>
               <tr>
                 <td>1</td>
-                <td>J23101</td>
+                <td>BBa_J364000</td>
                 <td>1791</td>
                 <td>B0034</td>
               </tr>
               <tr>
                 <td>2</td>
-                <td>J23106</td>
+                <td>BBa_J364001</td>
                 <td>1185</td>
                 <td>B0034</td>
               </tr>
               <tr>
                 <td>3</td>
-                <td>J23117</td>
+                <td>BBa_J364002</td>
                 <td>162</td>
                 <td>B0034</td>
               </tr>
               <tr>
                 <td>4</td>
-                <td>J23101</td>
-                <td>1791</td>
-                <td>J364100</td>
+                <td>BBa_J364007</td>
+                <td>547</td>
+                <td>B0034</td>
               </tr>
               <tr>
                 <td>5</td>
-                <td>J23106</td>
-                <td>1185</td>
-                <td>J364100</td>
+                <td>BBa_J364008</td>
+                <td>1831</td>
+                <td>B0034</td>
               </tr>
               <tr>
                 <td>6</td>
-                <td>J23117</td>
-                <td>162</td>
-                <td>J364100</td>
+                <td>BBa_J364009</td>
+                <td>396</td>
+                <td>B0034</td>
               </tr>
             </tbody>
           </table>
-          <p>All constructs were received in the pSB1C3 plasmid carrying the gene for chloramphenicol resistancy.</p>
-          <p>The provided InterLab protocol was followed to perform the measurements, as well as the protocol for transformation. Colony PCR, which was not a required part of the InterLab study, was performed using published <a href="/Team:Lund/Experiments">protocol</a>.</p>
         </section>
 
         <section>
           <h3 class="section-heading">Results</h3>
+          <p>All the raw data is available <a href="http://2018.igem.org/wiki/images/b/bd/T--Lund--Interlab_Lund.xlsx">here</a>.</p>
 
-          <p>All raw data from measurements can be found <a href="http://2017.igem.org/wiki/images/8/85/T--Lund--InterLab_20170928_Measurements.xlsx" target="_blank">here</a>. In order to quantify the fluorescence of the expressed GFP in test devices, a standard curve as in <em>fig. 1</em>, using fluorescein was made. For the absorbance measurements a conversion factor was needed to convert absorbance data to standard OD<sub>595</sub> measurements. For that purpose LUDOX-S40 was used as a single reference point. The results from the absorbance and fluorescence measurements are depicted in <em>fig. 3</em> and <em>fig. 4</em>, respectively.</p>
+          <p>
+            The results of calibration 1 gave a conversion factor between OD600 and Abs600 of 2.571.
+            The results for calibration 2 can be seen in <em>fig. 1</em>. A quite linear trend was formed.
+            How the fluorescence intensity of the fluorescein salt depended on concentration is shown in <em>fig. 2</em>. Also here a linear trend showed.
+          </p>
 
-          <p>The result from colony PCR showed the size of the insert was about 1200 bp for the six test devices as well as the positive control device (P), and about 400 bp for the negative control device (N). The negative control contained water instead of the colony PCR product. </p>
+          <p>
+            How the cell fluorescence varied before and after the 6 h incubation is shown in <em>fig. 3</em>. Here it was possible to observe an increase for all but the negative control and the 3rd test device.
+          </p>
+
+          <figure>
+            <img class="img-responsive center-block img-thumbnail" src="">
+            <figcaption>Figure 1: Figure 1. Calibration for Abs600 with varying amounts of particles of the same size as <em>E. coli</em> cells.</figcaption>
+          </figure>
+
+          <figure>
+            <img class="img-responsive center-block img-thumbnail" src="">
+            <figcaption>Figure 2: Measured fluorescence for different concentrations of sodium fluorescein. </figcaption>
+          </figure>
+
+          <figure>
+            <img class="img-responsive center-block img-thumbnail" src="">
+            <figcaption>Figure 3: Differences in OD600  before and after 6 h incubation for the different replicates of cells according to <a href="http://2018.igem.org/wiki/images/0/09/2018_InterLab_Plate_Reader_Protocol.pdf">measurement protocol</a>. In each colour of <em>fig. 3</em> and <em>fig. 4</em> from left to right, the test devices from top to bottom in table 1 are represented.</figcaption>
+          </figure>
+
+          <figure>
+            <img class="img-responsive center-block img-thumbnail" src="">
+            <figcaption>Figure 4: Differences in fluorescence before and after 6h incubation of cells for the different replicates.</figcaption>
+          </figure>
         </section>
 
         <section>
           <h3 class="section-heading">Discussion</h3>
-          <p>After several unsuccessful attempts of obtaining fluorescence readings, colony PCR was performed to ensure the incubated colonies contained the plasmid with the correct gene insert, <em>fig. 2</em>. The gel results of the colony PCR products indicated the correct gene inserts were present, meaning the transformation was successful. Based on the promoter strengths, the following outcomes were expected:</p>
-          <p>Device 1 and 4 - high fluorescence signal and low OD<sub>595</sub></p>
-          <p>Device 2 and 5 - medium high fluorescence signal and OD<sub>595</sub></p>
-          <p>Device 3 and 6 - low fluorescence signal and high OD<sub>595</sub></p>
-          <p>The relative results matched the expected outcome to a certain extent. However, the absolute values for absorbance and fluorescence were on a level of background noise. Low OD<sub>595</sub> values could be explained by low competency of <em>E. coli </em>DH5-α cells. Low fluorescence values might be the due to questionable reliability of RBS and improper physical conditions of the cell. It should be noted that the cell growth on chloramphenicol plates was consistently low throughout the project.</p>
-        </section>
+          <p>According to the promoter strengths, test device 1, 2 and 5 should fluoresce more than the positive control and test device 3 which are the weakest. 4 and 6 should be somewhere in between. </p>
 
-      </div>
-      <div class="col-md-4">
-        <figure>
-            <a href="#" data-featherlight="http://2017.igem.org/wiki/images/b/b3/T--Lund--InterLab--Fl_std_curve.svg">
-              <img class="img-responsive center-block img-thumbnail" src="http://2017.igem.org/wiki/images/b/b3/T--Lund--InterLab--Fl_std_curve.svg">
-            </a>
-            <figcaption class="text-center">Figure 1: Standard curve with fluorescein (μM).</figcaption>
-          </figure>
-          <figure>
-            <a href="#" data-featherlight="http://2017.igem.org/wiki/images/d/d7/T--Lund--InterLab--AGE_colony_PCR_170923.jpg">
-              <img class="img-responsive center-block img-thumbnail" src="http://2017.igem.org/wiki/images/d/d7/T--Lund--InterLab--AGE_colony_PCR_170923.jpg">
-            </a>
-            <figcaption class="text-center">Figure 2: Gel image from agarose gel electrophoresis with colony PCR samples.</figcaption>
-          </figure>
-          <figure>
-            <a href="#" data-featherlight="http://2017.igem.org/wiki/images/3/31/T--Lund--InterLab--Absorbance_plot-svg.svg">
-              <img class="img-responsive center-block img-thumbnail" src="http://2017.igem.org/wiki/images/3/31/T--Lund--InterLab--Absorbance_plot-svg.svg">
-            </a>
-            <figcaption class="text-center">Figure 3: Absorbance measurements of the devices at 0h, 2h, 4h and 6h.</figcaption>
-          </figure>
-          <figure>
-            <a href="#" data-featherlight="http://2017.igem.org/wiki/images/a/a3/T--Lund--InterLab--Fluorescence_plot.svg">
-              <img class="img-responsive center-block img-thumbnail" src="http://2017.igem.org/wiki/images/a/a3/T--Lund--InterLab--Fluorescence_plot.svg">
-            </a>
-            <figcaption class="text-center">Figure 4: Fluorescence measurements of the devices at 0h, 2h, 4h and 6h.</figcaption>
-          </figure>
+          <p>According to <em>fig. 4</em>, test device 4 was the highest, 2 and 5 medium, 1, 3 and 6 were lower and the controls were low. Thus, the results were not completely off, but matched the expected outcome to some degree. Possible sources of error might be not perfectly regulated cells when it comes to protein production and growth or that the stated strength of the promoters were not what they were in reality. </p>
+        </section>
       </div>
     </div>
-
   </div>
 </div>
-
+</div>
 </html>
 {{Lund/footer}}
