@@ -58,11 +58,8 @@
       'Team:Lund/Modeling/ParameterEstimation':       '#li_model',
       'Team:Lund/Modeling/Implementation':            '#li_model',
       'Team:Lund/Safety':                             '#li_safety',
-      'Team:Lund/HP/Silver':                          '#li_hp',
-      'Team:Lund/HP/Gold_Integrated':                 '#li_hp',
-      'Team:Lund/Engagement':                         '#li_hp',
-      'Team:Lund/HP/Media':                           '#li_hp',
-      'Team:Lund/Communication':                      '#li_hp',
+      'Team:Lund/Human_Practices':                    '#li_hp',
+      'Team:Lund/Public_Engagement':                  '#li_hp',
     };
 
     var listItem = $(pages[wgPageName]);
@@ -228,8 +225,14 @@ $(document).ready(function() {
         </li>
 
         <li id="li_model"><a href="/Team:Lund/Model">Model</a></li>
-        <li id="li_hp"><a href="/Team:Lund/Human_Practices">Practices</a></li>
 
+        <li id="li_hp" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Practices <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/Team:Lund/Human_Practices">Integrated</a></li>
+            <li><a href="/Team:Lund/Public_Engagement">Engagement</a></li>
+          </ul>
+        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
