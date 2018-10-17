@@ -16,7 +16,7 @@
     <li role="presentation"><a href="/Team:Lund/Model/Hemoglobin">Overview</a></li>
     <li role="presentation"><a href="/Team:Lund/Model/Hemoglobin/Introduction">Introduction</a></li>
     <li role="presentation"><a href="/Team:Lund/Model/Hemoglobin/MaterialMethod">Materials and methods</a></li>
-    <li role="presentation" class="active"><a href="/Team:Lund/Model/Hemoglobin/Results">Results</a></li>
+    <li role="presentation" class="active"><a href="/Team:Lund/Model/Hemoglobin/Results">Results and Discussion</a></li>
   </ul>
 </div>
 
@@ -25,11 +25,106 @@
     <div class="row">
       <div class="col-lg-10">
         <section>
-          <h3 class="section-heading">Overview</h3>
+          <h3 class="section-heading">Feature selection</h3>
 
-          <p> </p>
+          <p><em>Fig. 1</em> illustrates the results obtained from the feature selection. In total, seven groups of descriptors were passed through the pipeline of which only four remained. Initially, 2874 descriptors were generated of which 1924 remained after the constant and duplication filter. Then, after filtering on co-linearity, only 118 descriptors remained. This big reduction is due to the extremely high redundancy among the descriptors as the dataset consists of mostly single point mutants. The amount of change in the physicochemical and structural properties in the primary structure is then indeed small and some descriptors do not even change at all. As an example, exchanging one hydrophobic amino acid to another does not alter the composition descriptors in feature group 4 (<a href="/Team:Lund/Model/Hemoglobin/MaterialMethod#descriptors_hb">see materials and methods</a>). It is therefore reasonable that only a small amount of uncorrelated descriptors are affected by the point mutations. Furthermore, after the univariate filter, only 46 descriptors were deemed informative and after the final recursive feature elimination (RF-RFECV) only 22 descriptors remained. The results are consistent with the rule of thumb that only a few descriptors are truly informative in biological structure-activity problems [1].
+          </p>
+
+          <figure>
+            <a href="#" data-featherlight="http://2018.igem.org/wiki/images/7/76/T--Lund--hbresults_features.svg">
+              <img class="img-responsive center-block img-thumbnail" src="http://2018.igem.org/wiki/images/7/76/T--Lund--hbresults_features.svg">
+            </a>
+            <figcaption>Figure 1: The retained descriptors after the feature elimination pipeline.</figcaption>
+          </figure>
+
+          <p>
+            Interestingly, only the descriptors originating from the beta subunit remained, as can be seen in <em>fig. 1</em>. This indicates that the feature elimination pipeline never managed to find any meaningful correlations between the mutations in the alpha subunit and the target oxygen binding affinity. From this observation we decided to discard all entries with alpha mutations since no descriptors were retained, implying that all alpha subunit mutations, regardless of the type and number of mutation,  would give rise to the same set of descriptors. That is, all future results are based on solely the beta subunits.
+          </p>
+
+          <p>
+            To further analyze the selected descriptors, we looked at the Gini importance indices derived from a random forest classifier, as illustrated in <em>fig 2</em>. It can be seen that only the descriptor groups G3, G4, G5, and G6 remained, corresponding to the autocorrelation descriptors, composition, transition and distribution descriptors, quasi-sequence order descriptors and amphiphilic pseudo-amino acid composition descriptors. The right part of the figure shows the combined importance, indicating that the autocorrelation property (group 3) is the most informative of all descriptors.
+          </p>
+
+          <figure>
+            <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+              <img class="img-responsive center-block img-thumbnail" src="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+            </a>
+            <figcaption>Figure 2: The feature importances of the retained descriptors.</figcaption>
+          </figure>
+
+          <p>
+            The physicochemical and structural autocorrelation descriptors therefore seem to be the most informative features when predicting the oxygen binding affinity. Looking further into each descriptor, as illustrated in the left part of <em>fig. 2</em>, it can be seen that the descriptor G3.1.1.1.25 has the highest Gini importance. This index corresponds to the Moran-Broto autocorrelation of the hydrophobicity along the beta sequence at lag 25 (see section on the descriptors). That is, the way the hydrophobicity is distributed along the sequence seems to be a deciding factor in whether the oxygen binding affinity is increased or not. We interpret this as that the correlation of hydrophobicity between every twenty fifth residue is an informative descriptor of the oxygen binding affinity. This means that when a residue is mutated, the way the localized change in hydrophobicity impacts the correlation may decide whether the oxygen binding affinity increases or not.
+          </p>
+
+          <p>
+            Furthermore, the descriptor with the third largest Gini importance is G3.1.2.1.2 which is also a Moran-Broto autocorrelation. However, this descriptor corresponds to the way the alpha-hydrogen chemical shift on each residue is correlated along the sequence. The lag is every second amino acid and the hydrogen chemical shift is a measure of how polar (positively charged) the environment around a hydrogen is. It therefore seems that the distribution of the local polarity around each alpha hydrogen may have an effect on the oxygen binding affinity. A scatter plot of the respective hydrophobicity and alpha hydrogen descriptors obtained from the model selection data is shown in <em>fig. 3</em>. It can be seen that there is a clear separation between the classes, and that a higher hydrophobic correlation indicates low affinity and that a higher (closer to zero) correlation in the alpha shift also indicates a high affinity. It must be noted that since the descriptors are normalized, it can be seen that the actual correlation for each physicochemical is small in absolute terms, while the class separation is high.
+          </p>
+
+          <p>
+            For the sake of brevity, we end the discussion of each descriptor here, although there is still a lot which can be discussed.
+          </p>
+
+          <figure>
+            <a href="#" data-featherlight="http://2018.igem.org/wiki/images/b/b2/T--Lund--shift_gyro.svg">
+              <img class="img-responsive center-block img-thumbnail" src="http://2018.igem.org/wiki/images/b/b2/T--Lund--shift_gyro.svg">
+            </a>
+            <figcaption>Figure 3: A scatter plot of the features G3.1.2.1.2 and G3.1.1.1.25.</figcaption>
+          </figure>
         </section>
 
+        <section>
+        <h3 class="section-heading">Model selection</h3>
+
+        <p>
+          In total, seven classifiers were considered and screened for model selection by a twenty times repeated five-fold cross-validation iterated under a grid search of which the hyperparameters were chosen by manual zooming. Table 4 illustrates the results on the model screening. The logistic regression (LR) was used as a baseline model to evaluate the predictive power of the other descriptors. It can be seen that the random forest (RF) and gradient boosting (GB) classifiers performed equally well for all metrics. Compared to LR they achieved a slightly better performance on all metrics except for the sensitivity, which was close to one for the LR. This means that out of all high affinity mutants, it managed to correctly classify all of them. However, by looking at the specificity (and accuracy), it can be seen that the value is 0.7, which is approximately the class imbalance between the high and low affinity mutants. This indicates that the logistic regression is slightly biased towards high affinity hemoglobins. The RF and GB on the other hand have a slightly lower sensitivity, but a higher specificity and accuracy, which implies that the classification is more balanced. Finally, it can be seen that the support vector classifier (SVC) performs worse than the LR and is more biased towards the positive class as shown by the sensitivity, accuracy and specificity.
+        </p>
+
+        <table class="table">
+          <caption>Table 1: Five randomly selected mutations. The notation is as follows: XNNY means that amino acid X at position NN was substituted for amino acid Y. </caption>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Subunit</th>
+                <th>Mutation</th>
+                <th>Affinity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Hb Canebiere</td>
+                <td>Beta</td>
+                <td>P36A</td>
+                <td>Decreased</td>
+              </tr>
+              <tr>
+                <td>Hb Bologna</td>
+                <td>Beta</td>
+                <td>K61M</td>
+                <td>Decreased</td>
+              </tr>
+              <tr>
+                <td>Hb Meulan</td>
+                <td>Alpha</td>
+                <td>S84N</td>
+                <td>Increased</td>
+              </tr>
+              <tr>
+                <td>Hb Lyon-Bron</td>
+                <td>Alpha</td>
+                <td>V1A</td>
+                <td>Decreased</td>
+              </tr>
+              <tr>
+                <td>HB Alberta</td>
+                <td>Beta</td>
+                <td>G146E</td>
+                <td>Increased</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+      </section>
 
         <section>
           <h3 class="section-heading">References</h3>

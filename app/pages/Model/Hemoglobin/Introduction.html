@@ -16,7 +16,7 @@
     <li role="presentation"><a href="/Team:Lund/Model/Hemoglobin">Overview</a></li>
     <li role="presentation" class="active"><a href="/Team:Lund/Model/Hemoglobin/Introduction">Introduction</a></li>
     <li role="presentation"><a href="/Team:Lund/Model/Hemoglobin/MaterialMethod">Materials and methods</a></li>
-    <li role="presentation"><a href="/Team:Lund/Model/Hemoglobin/Results">Results</a></li>
+    <li role="presentation"><a href="/Team:Lund/Model/Hemoglobin/Results">Results and Discussion</a></li>
   </ul>
 </div>
 
@@ -28,38 +28,26 @@
           <h3 class="section-heading">Background</h3>
 
           <p>
-            With the worldwide blood shortage, there has evolved a big demand for blood substitutes. One possible solution, which is independent of today’s reliance of blood donors is the use of recombinant hemoglobin based oxygen carriers (rHBOCs). These substitutes consists of concentrated solutions of purified, acellular human hemoglobin which has been heterologously expressed in a non-native host. The advantages over human donated blood are numerous and include universal compatibility, longer shelf life, reduced risk of disease transmission as well as enhanced oxygen delivery. However, despite the many advantages, rHBOCs are still not being used in practice. This is mainly due to cases of hypertension caused by globin denaturation, misfolding, heme orientational disorder and heme loss. In addition, there are numerous downstream processing problems which includes the removal of lipopolysaccharides (when expressed in e.g. E. coli), protein impurities and free porphyrins.
+            With the worldwide blood shortage, a high demand for blood substitutes has evolved. One solution, which is independent of today’s reliance on blood donors, is the use of recombinant hemoglobin based oxygen carriers (rHBOCs). These substitutes consist of concentrated solutions of purified, acellular human hemoglobin which has been heterologously expressed in a non-native host. The advantages over human donated blood are numerous and include universal compatibility, longer shelf life, and reduced risk of disease transmission as well as enhanced oxygen delivery. However, despite the many advantages, rHBOCs are still not being used in practice. This is mainly due to cases of hypertension caused by globin denaturation, misfolding, heme orientational disorder and heme loss. In addition, there are numerous downstream processing problems which includes the removal of lipopolysaccharides (when expressed in e.g. <em>E. coli</em>), protein impurities and free porphyrins.
           </p>
 
           <p>
-            These issues are mainly caused by the direct injection of free hemoglobin into the bloodstream, of which the environment differs significantly from inside the native red blood cells. As such, many of the issues are related to the interaction of hemoglobin with the ambient environment, either directly or after a subsequent decomposition. With this, several properties must be modified in order to make hemoglobin a viable blood substitute. This includes the reduction of nitrogen oxide scavenging as well as reducing oxidative reactivity and increasing the stability of the protein. In addition, the oxygen binding affinity must be modified accordingly to the new environment, which in practice means it must be lowered.
+            These issues are mainly caused by the direct injection of free hemoglobin into the bloodstream, of which the environment differs significantly from inside the native red blood cells. As such, many of the issues are related to the interaction of hemoglobin with the surrounding environment, either directly or after a subsequent decomposition. With this, several properties must be modified in order to make hemoglobin a viable blood substitute. This includes the reduction of nitric oxide scavenging as well as reducing oxidative reactivity and increasing the stability of the protein. In addition, the oxygen binding affinity must be lowered to a level appropriate for the new environment.
           </p>
 
           <p>
-            The approaches to solve the related problems has historically been via rational design strategies of which operative parts of the hemoglobin are mutated.  Major achievements include, but are not limited to the introduction of di-𝛼 mutation which merges the alpha subunits together via a glycine linker, preventing dimeric dissociating, and the V1M mutation which facilitates bacterial translation without cleaving the N-terminal methionine. However, despite the advances there is still no way of achieving high stability without compromising other properties such has nitrogen oxide scavenging and oxygen binding affinity. To this end, there is no approved formulation of rHBOCs for the use of blood substitutes.
+            The approaches to solve the related problems have historically been via rational design strategies in which operative parts of the hemoglobins are mutated. Major achievements include, but are not limited to, the introduction of the di-𝛼 mutation which merges the alpha subunits together via a glycine linker, preventing dimeric dissociation, and the V1M mutation which facilitates bacterial translation. However, despite the advances there is still no way of achieving sufficient properties without compromising any other property such has nitric oxide scavenging or oxygen binding affinity. To this end, there is no approved formulation of rHBOCs for the use as a blood substitute.
           </p>
 
+          <p>
+            <b>Source:</b> Cornelius L. Varnado, Todd L. Mollan, Ivan Birukou, Bryan J.Z. Smith, Douglas P. Henderson, and John S. Olson. (2013) “Development of Recombinant Hemoglobin-Based Oxygen Carriers”.  Antioxidants & Redox Signaling Vol. 18, No. 17
+          </p>
 
           <h3 class="section-heading">Approach</h3>
 
           <p>
-            We take a data driven approach in the development of rHBOCs and state our objective as follows: given a set of hemoglobin mutants with classified oxygen affinities, we model the affinity based on correlations with the physicochemical properties of the primary sequence of the alpha-beta dimer. Based on the model, we rank all possible single mutation variants based on the probability of reducing the oxygen affinity  and select a handful of the top candidates based on qualitative insight for further wet lab investigation. The entire procedure is illustrated in fig. 3.
+            We approach the stated problem in a semi data-driven manner by combing machine learning and qualitative protein design. Our goal is to design hemoglobins by training a learning algorithm to discriminate high- from low-affinity mutants based on previous functional data. Following this, a set of candidates are generated in silico and scored by their likelihood of decreasing the oxygen affinity after being filtered through the algorithm. The high-scoring mutants are then manually selected and evaluated qualitatively based on biological insight and protein engineering principles. By this procedure, the huge number of possible mutants are reduced to a manageable set of rationally chosen candidates which may be subjected for further analysis.
           </p>
-        </section>
-
-
-        <section>
-          <h3 class="section-heading">References</h3>
-          <button id="refBtn" class="btn btn-default" type="button" data-toggle="collapse" data-target="#ref" aria-expanded="false" aria-controls="ref">
-            Show
-          </button>
-          <div class="collapse" id="ref">
-            <ol class="references">
-              <li>[1] Larentis, A., Nicolau, J., Esteves, G., Vareschini, D., de Almeida, F., dos Reis, M., Galler, R. and Medeiros, M. (2014). Evaluation of pre-induction temperature, cell growth at induction and IPTG concentration on the expression of a leptospiral protein in E. coli using shaking flasks and microbioreactor. <i>BMC Research Notes</i>, 7(1), p.671.</li>
-              <li>[2] Zi, Z. (2011). Sensitivity analysis approaches applied to systems biology models. <i>IET Systems Biology</i>, 5(6), pp.336-346.</li>
-              <li>[3] Kafri, M., Metzl-Raz, E., Jona, G. and Barkai, N. (2016). The Cost of Protein Production. <i>Cell Reports</i>, 14(1), pp.22-31.</li>
-            </ol>
-          </div>
         </section>
       </div>
     </div>

@@ -16,7 +16,7 @@
     <li role="presentation" class="active"><a href="/Team:Lund/Model/Hemoglobin">Overview</a></li>
     <li role="presentation"><a href="/Team:Lund/Model/Hemoglobin/Introduction">Introduction</a></li>
     <li role="presentation"><a href="/Team:Lund/Model/Hemoglobin/MaterialMethod">Materials and methods</a></li>
-    <li role="presentation"><a href="/Team:Lund/Model/Hemoglobin/Results">Results</a></li>
+    <li role="presentation"><a href="/Team:Lund/Model/Hemoglobin/Results">Results and Discussion</a></li>
   </ul>
 </div>
 
@@ -68,7 +68,7 @@
           </p>
 
           <p>
-            The dataset was first subjected to a validation and model selection split where the former was set aside for later validation. By using the latter split, the descriptors were subjected to a four stage feature elimination pipeline, resulting in only 22 active descriptors remaining. By investigating the Gini importance of a random forest classifier, it was seen that how the polarity and hydrophobicity are distributed along the beta chain may act as an indicator of the strength of the oxygen binding affinity. Based on this, four classifiers, a random forest, gradient boosted tree, support vector machine and logistic regression along with three voting models were cross validated under a grid search. To avoid random bias, each five-fold cross validation was repeated twenty times. The best model as evaluated by the final external validation was a soft voting classifier consisting of a gradient boosted tree and random forest classifier, yielding an accuracy of 0.73 (+/- 0.08), sensitivity of 0.89 (+/- 0.10), specificity of 0.76 (+/- 0.06) and a roc-auc of 0.69 (+/- 0.13) on the model selection set. For validation, the accuracy was 0.78, sensitivity 0.93, specificity 0.76 and roc-auc 0.74 after retraining the model on the entire model selection set. The final voting classifier was then retrained on all data and ready for the subsequent mutant ranking. The entire procedure is illustrated in fig. 1.
+            The dataset was first subjected to a validation and model selection split where the former was set aside for later validation. By using the latter split, the descriptors were subjected to a four stage feature elimination pipeline, resulting in only 22 active descriptors remaining. By investigating the Gini importance of a random forest classifier, it was seen that how the polarity and hydrophobicity are distributed along the beta chain may act as an indicator of the strength of the oxygen binding affinity. Based on this, four classifiers, a random forest, gradient boosted tree, support vector machine and logistic regression along with three voting models were cross validated under a grid search. To avoid random bias, each five-fold cross validation was repeated twenty times. The best model as evaluated by the final external validation was a soft voting classifier consisting of a gradient boosted tree and random forest classifier, yielding an accuracy of 0.73 (+/- 0.08), sensitivity of 0.89 (+/- 0.10), specificity of 0.76 (+/- 0.06) and a roc-auc of 0.69 (+/- 0.13) on the model selection set. For validation, the accuracy was 0.78, sensitivity 0.93, specificity 0.76 and roc-auc 0.74 after retraining the model on the entire model selection set. The final voting classifier was then retrained on all data and ready for the subsequent mutant ranking. The entire procedure is illustrated in <em>fig. 1</em>.
           </p>
           <figure>
             <a href="#" data-featherlight="http://2018.igem.org/wiki/images/0/02/T--Lund--hb_ml_pipeline.svg">
@@ -78,7 +78,7 @@
           </figure>
 
           <p>
-          After the model selection procedure, 1795 single point mutations were generated and additional descriptors were generated from the PROFEAT server. These mutants were then ranked by their likelihood of decreasing the oxygen binding affinity by filtering through the voting classifier. In order to evaluate the final true performance of the model, the ranking was manually analyzed and four high scoring mutants were chosen and expressed in the lab. These were successfully expressed in E. coli as indicated by SDS-PAGE and shown to be functional as indicated by the characteristic absorbance peaks at around 420 and 550 nm when measuring the crude absorbance spectra by spectrophotometry. The entire procedure is illustrated in fig 2.
+          After the model selection procedure, 1795 single point mutations were generated and additional descriptors were generated from the PROFEAT server. These mutants were then ranked by their likelihood of decreasing the oxygen binding affinity by filtering through the voting classifier. In order to evaluate the final true performance of the model, the ranking was manually analyzed and four high scoring mutants were chosen and expressed in the lab. These were successfully expressed in E. coli as indicated by SDS-PAGE and shown to be functional as indicated by the characteristic absorbance peaks at around 420 and 550 nm when measuring the crude absorbance spectra by spectrophotometry. The entire procedure is illustrated in <em>fig 2</em>.
           </p>
 
           <figure>
@@ -89,26 +89,6 @@
           </figure>
         </div>
       </div>
-
-
-
-    <div class="row">
-      <div class="col-lg-10">
-        <section>
-          <h3 class="section-heading">References</h3>
-          <button id="refBtn" class="btn btn-default" type="button" data-toggle="collapse" data-target="#ref" aria-expanded="false" aria-controls="ref">
-            Show
-          </button>
-          <div class="collapse" id="ref">
-            <ol class="references">
-              <li>[1] Larentis, A., Nicolau, J., Esteves, G., Vareschini, D., de Almeida, F., dos Reis, M., Galler, R. and Medeiros, M. (2014). Evaluation of pre-induction temperature, cell growth at induction and IPTG concentration on the expression of a leptospiral protein in E. coli using shaking flasks and microbioreactor. <i>BMC Research Notes</i>, 7(1), p.671.</li>
-              <li>[2] Zi, Z. (2011). Sensitivity analysis approaches applied to systems biology models. <i>IET Systems Biology</i>, 5(6), pp.336-346.</li>
-              <li>[3] Kafri, M., Metzl-Raz, E., Jona, G. and Barkai, N. (2016). The Cost of Protein Production. <i>Cell Reports</i>, 14(1), pp.22-31.</li>
-            </ol>
-          </div>
-        </section>
-      </div>
-    </div>
   </div>
 </div>
 </div>
