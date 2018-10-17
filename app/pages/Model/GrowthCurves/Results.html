@@ -14,9 +14,9 @@
 <div class="container">
   <ul class="nav nav-pills nav-auto-stacked">
     <li role="presentation"><a href="/Team:Lund/Model/GrowthCurves">Overview</a></li>
-    <li role="presentation"><a href="/Team:Lund/Model/GrowthCurves/Introduction">Introduction</a></li>
+    <!-- <li role="presentation"><a href="/Team:Lund/Model/GrowthCurves/Introduction">Introduction</a></li> -->
     <li role="presentation"><a href="/Team:Lund/Model/GrowthCurves/MaterialMethod">Materials and methods</a></li>
-    <li role="presentation" class="active"><a href="/Team:Lund/Model/GrowthCurves/Results">Results</a></li>
+    <li role="presentation" class="active"><a href="/Team:Lund/Model/GrowthCurves/Results">Results and Discussion</a></li>
 
 
     <!-- <li role="presentation"><a href="/Team:Lund/Modeling/ModelDerivation">Model derivation</a></li>
@@ -35,6 +35,294 @@
           <p> </p>
         </section>
 
+        <section>
+          <h3 class="section-heading">Data fitting</h3>
+
+          <p>
+            <em>Fig. 1</em> illustrates the obtained fits, where we have denoted the biobricks by their last four letters for convenience. It can be seen that all growth curves resemble a sigmoid and that the Gompertz function managed to properly capture the structure. Furthermore, it can be noted that there is a small spread of outliers on some measurements, most notably at around 3 hours in the strain carrying 2011.
+          </p>
+
+          <br>
+
+          <div class="well">
+            <a data-toggle="collapse" data-parent="#experiments" href="#fig1">
+              <h5 style="color:black">
+                <i class="fas fa-angle-right" aria-hidden="true"></i>
+                 Figure 1
+               </h5>
+            </a>
+            <div id="fig1" class="collapse">
+              <div class="row">
+                <figure>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <figcaption>Figure 1: .</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3 class="section-heading">Bootstrap</h3>
+          <p>
+            Proceeding with the bootstrap, the residuals were first calculated and subjected to the quantile filter. Only the growth curves corresponding to 2011, 2015 and 2016 contained outliers and at most, two samples were removed. The results are illustrated in <em>fig. 2</em>. The dark blue central curves in the plots to the left are the estimates obtained from the previous Gompertz fit and the light blue regions correspond to the bootstrapped sigmoids plotted on top of each other. These can be interpreted as new realizations obtained from the residuals and the intervals they span correspond to the spread of the samples. The figures to the right illustrate the histograms of the residuals and it can be seen that they are all of approximately the same magnitude and centered around zero with possibly a slight skewness. Furthermore, by visually inspecting <em>fig. 1</em>, it can be seen that the magnitude and change of sign of the residuals are approximately stationary over the entire growth curves. This justifies our approach bootstrapping to estimate the coming growth parameters.
+          </p>
+
+          <br>
+
+          <div class="well">
+            <a data-toggle="collapse" data-parent="#experiments" href="#fig2">
+              <h5 style="color:black">
+                <i class="fas fa-angle-right" aria-hidden="true"></i>
+                 Figure 2
+               </h5>
+            </a>
+            <div id="fig2" class="collapse">
+              <div class="row">
+                <figure>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <figcaption>Figure 2: .</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            The histograms for the bootstrapped growth parameters are illustrated in <em>fig. 3</em>. It can be seen that the distributions for all parameters and experiments are well-behaved with a clear central mass and a corresponding surrounding and decreasing mass. This indicates that the Gompertz sigmoid is stable with respect to this problem and is therefore a good model of choice when also considering the residuals and fits in fig. 2. Furthermore, it is worth noting that all parameter distributions are not gaussian due to the skewness.
+          </p>
+
+          <div class="well">
+            <a data-toggle="collapse" data-parent="#experiments" href="#fig3">
+              <h5 style="color:black">
+                <i class="fas fa-angle-right" aria-hidden="true"></i>
+                 Figure 3
+               </h5>
+            </a>
+            <div id="fig3" class="collapse">
+              <div class="row">
+                <figure>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <figcaption>Figure 3: .</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <section>
+          <h3 class="section-heading">Parameter estimates</h3>
+
+          <p>
+            The final parameter estimates along with their 95% and 90% two-sided confidence intervals are shown in table 1, fig. 4 and fig. 5 respectively. By looking at fig. 6, it can be seen that there is no significant difference in the stationary cell densities between the samples used. This may be due to the small cultivation volumes as well as the large headspaces used in the experiment which causes a high mass transport of oxygen. In this way, oxygen might dissolve sufficiently fast and consequently mask the effect of VHb.
+          </p>
+
+          <p>
+            Looking at the time to exponential growth, we see that the confidence intervals cover both negative and positive times for all samples except 2013 and 2016, indicating that for all the other samples, we cannot be certain that we started measuring during the lag phase despite the low initial OD. Nevertheless, this does not change the results for the other parameters since the growth rate is given by the slope, which is constant throughout the measurement period, and the stationary cell density is independent of when the measurements started. As also seen in fig 5., the variance is too high to draw any conclusions.
+          </p>
+
+          <p>
+            As for the growth rate during the exponential phase, all VHb-expressing strains had a higher average growth rate than the negative control, but only 2014 and 2015 had significantly higher growth rates at a confidence level of 95%. Interestingly these two have the lowest promoter strengths, with the relative strengths 0.00 and 0.01, respectively. However, we have <a href="/Team:Lund/Results">results</a> suggesting that the expression level in 2014 is not 0, but that the promoter is in fact leaking to some extent. The implication of this is that a low level of VHb expression has a positive effect on the growth rate. While the averages for the higher-expression strains are also higher than for the negative control, the difference is not significant on a 95% confidence level and conclusions about their effect cannot be drawn.
+          </p>
+
+          <div class="well">
+            <a data-toggle="collapse" data-parent="#experiments" href="#fig4">
+              <h5 style="color:black">
+                <i class="fas fa-angle-right" aria-hidden="true"></i>
+                 Figure 4
+               </h5>
+            </a>
+            <div id="fig4" class="collapse">
+              <div class="row">
+                <figure>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <figcaption>Figure 4: .</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <div class="well">
+            <a data-toggle="collapse" data-parent="#experiments" href="#fig5">
+              <h5 style="color:black">
+                <i class="fas fa-angle-right" aria-hidden="true"></i>
+                 Figure 5
+               </h5>
+            </a>
+            <div id="fig5" class="collapse">
+              <div class="row">
+                <figure>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <figcaption>Figure 5: .</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            Finally, <em>fig. 6</em> shows a scatter plot of the estimated growth rates for each biobrick with respect to the promoter strengths. It can be seen that there is a slight negative correlation which shows that while VHb increases the growth rate at all expression levels, the increase becomes less prominent as the expression level increases. This may be due to the additional taxation put on the cell economy during the initial growth phase outweighing the positive effect of VHb and consequently slowing the cell growth. However, while the results may be explained from a mechanistic point of view, they are not entirely consistent with previous research. It has been shown that an increased level of VHb consistently increases the growth rate in E. coli when modulating the expression level through an IPTG-inducible lac-regulated promoter [1]. However, the results were based on microaerobic conditions. On the other hand, as our cultivations were done in flasks instead of fermentors, we could not control the oxygenation to the same extent, especially during sampling events when flasks needed to be opened. Additionally, the headspace in our cultivations was 80%. This means that we most likely did not have consistently microaerobic conditions.
+          </p>
+
+          <div class="well">
+            <a data-toggle="collapse" data-parent="#experiments" href="#fig6">
+              <h5 style="color:black">
+                <i class="fas fa-angle-right" aria-hidden="true"></i>
+                 Figure 6
+               </h5>
+            </a>
+            <div id="fig6" class="collapse">
+              <div class="row">
+                <figure>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <a href="#" data-featherlight="http://2018.igem.org/wiki/images/e/ee/T--Lund--hb_feature_importance_results.svg">
+                    <img class="img-responsive center-block img-thumbnail" src="" alt="dont forget this image">
+                  </a>
+                  <figcaption>Figure 6: .</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3 class="section-heading">Conclusion</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </section>
 
         <section>
           <h3 class="section-heading">References</h3>
@@ -43,9 +331,7 @@
           </button>
           <div class="collapse" id="ref">
             <ol class="references">
-              <li>[1] Larentis, A., Nicolau, J., Esteves, G., Vareschini, D., de Almeida, F., dos Reis, M., Galler, R. and Medeiros, M. (2014). Evaluation of pre-induction temperature, cell growth at induction and IPTG concentration on the expression of a leptospiral protein in E. coli using shaking flasks and microbioreactor. <i>BMC Research Notes</i>, 7(1), p.671.</li>
-              <li>[2] Zi, Z. (2011). Sensitivity analysis approaches applied to systems biology models. <i>IET Systems Biology</i>, 5(6), pp.336-346.</li>
-              <li>[3] Kafri, M., Metzl-Raz, E., Jona, G. and Barkai, N. (2016). The Cost of Protein Production. <i>Cell Reports</i>, 14(1), pp.22-31.</li>
+              <li>[1] Tsai PS, Hatzimanikatis V, Bailey JE. (1996). Effect of Vitreoscilla Hemoglobin Dosage on Microaerobic Escherichia coli Carbon and Energy Metabolism. <em>Biotechnology and Bioengineering, 49</em>, 139-150.</li>
             </ol>
           </div>
         </section>

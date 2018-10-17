@@ -336,9 +336,29 @@
         <p>
           The mutants from table 4 were ordered from IDT and expressed in E. coli BL21-DE3 as explained in the experimental design section. All four proteins were successfully expressed as indicated by SDS-PAGE (<em>fig. 3</em>) and were proven to be functional by measuring the absorbance spectrum as shown in <em>fig. 4-6</em>. See the results section for more details.
         </p>
+      </section>
 
+      <section>
+        <h3 class="section-heading">Final thoughts</h3>
+        <p>
+          As is extremely important in data science and predictive modeling, we now take the opportunity discuss certain limitations with our dataset. First, we believe that the dataset might not be fully representative of all variants of human hemoglobins. From all 1327 human hemoglobins in the database, only 148 have had their oxygen binding affinities reported, of which we chose the 143 with substitution point mutations. The question that arises is whether there is some underlying reason why not all of them were analyzed, or whether the mutants were analyzed in complete randomness. In the former case a bias would be introduced since the dataset used would then be a subset which was chosen based on a certain property, whereas in the second case, the dataset would be representative. We are still not sure which of the cases is true. Secondly the dataset is probably affected by survivorship bias. The reason for this is that only functional, albeit unstable hemoglobins can be found in humans. This means that it is probably impossible to infer anything about whether the protein will for instance be stable or fold properly. This is one the reason why the model is not suited for prediction on its own.
+        </p>
 
-      </section
+        <p>
+          Given the stated limitations, the interpretation of an inference made on the dataset should be considered conditionally. That is, anything predicted should be interpreted under the condition that the protein will function properly. This means that not everything can be predicted from the dataset and that it therefore requires explicit human supervision when selecting new variants for screening. As such, this model is not intended to replace the traditional methods of rational design, but rather to be combined with traditional protein engineering by reducing the huge space of possible mutations into a manageable (and hopefully representative) subset.
+        </p>
+
+        <p>
+          We will now discuss another issue, which is the choice of descriptors. The descriptors used were based on the physicochemical and structural properties of the primary sequence of the hemoglobin. Obviously, not all structural and physicochemical properties that are of relevance can be derived from the primary structure. For instance, it is not unreasonable that properties derived from the three-dimensional structure that cannot be derived from the primary may be indicative on the final oxygen binding affinity. However, incorporating this kind of information is very difficult since a three-dimensional structure for every mutant is needed prior to training. This is certainly hard to obtain and while one could rely on simulations, these are tedious, time-consuming and sometimes unreliable. In addition, there might also be other properties that are of relevance, such as how the electrons are coordinated around the heme group. While these kind of descriptors need simulations, they are also hard to estimate without a given three-dimensional structure. Clearly, features derived from the primary structure are simple to handle and can be generated immediately, which is the main reason why we proceeded this way.
+        </p>
+      </section>
+
+      <section>
+        <h3 class="section-heading">Conclusion</h3>
+        <p>
+          We have rationally designed human hemoglobin mutants by combining machine learning and protein engineering. This was accomplished by ranking a computer-generated library of mutants by using a classifier trained on a set of functionally characterized hemoglobins. The model was successfully trained and gave insights into the oxygen binding affinity of human hemoglobin. A final set of four mutants were ordered, expressed in the lab and proven functional by SDS-PAGE and spectrophotometry. We are still working on fully characterizing the proteins and are hoping to be able to present a true validation by measuring the actual binding affinity.
+        </p>
+      </section>
 
         <section>
           <h3 class="section-heading">References</h3>
@@ -347,9 +367,7 @@
           </button>
           <div class="collapse" id="ref">
             <ol class="references">
-              <li>[1] Larentis, A., Nicolau, J., Esteves, G., Vareschini, D., de Almeida, F., dos Reis, M., Galler, R. and Medeiros, M. (2014). Evaluation of pre-induction temperature, cell growth at induction and IPTG concentration on the expression of a leptospiral protein in E. coli using shaking flasks and microbioreactor. <i>BMC Research Notes</i>, 7(1), p.671.</li>
-              <li>[2] Zi, Z. (2011). Sensitivity analysis approaches applied to systems biology models. <i>IET Systems Biology</i>, 5(6), pp.336-346.</li>
-              <li>[3] Kafri, M., Metzl-Raz, E., Jona, G. and Barkai, N. (2016). The Cost of Protein Production. <i>Cell Reports</i>, 14(1), pp.22-31.</li>
+              <li>[1] Cronin, M., and Schultz, T. (2003) Pitfalls in QSAR. <em>Journal of Molecular Structure: THEOCHEM 622, 39-51</em>.</li>
             </ol>
           </div>
         </section>

@@ -13,14 +13,11 @@
 
 <div class="container">
   <ul class="nav nav-pills nav-auto-stacked">
-    <li role="presentation" class="active"><a href="/Team:Lund/Model/GrowthCurves/Overview">Overview</a></li>
-    <li role="presentation"><a href="/Team:Lund/Model/GrowthCurves/Introduction">Introduction</a></li>
+    <li role="presentation" class="active"><a href="/Team:Lund/Model/GrowthCurves">Overview</a></li>
+    <!-- <li role="presentation"><a href="/Team:Lund/Model/GrowthCurves/Introduction">Introduction</a></li> -->
     <li role="presentation"><a href="/Team:Lund/Model/GrowthCurves/MaterialMethod">Materials and methods</a></li>
-    <li role="presentation"><a href="/Team:Lund/Model/GrowthCurves/Results">Results</a></li>
+    <li role="presentation"><a href="/Team:Lund/Model/GrowthCurves/Results">Results and Discussion</a></li>
 
-    <!-- <li role="presentation"><a href="/Team:Lund/Modeling/ModelDerivation">Model derivation</a></li>
-    <li role="presentation"><a href="/Team:Lund/Modeling/ParameterEstimation">Parameter estimation</a></li>
-    <li role="presentation"><a href="/Team:Lund/Modeling/Implementation">Implementation</a></li> -->
   </ul>
 </div>
 
@@ -31,22 +28,15 @@
         <section>
           <h3 class="section-heading">Overview</h3>
 
-          <p> </p>
-        </section>
+          <p>In this model, we analyze the growth curves of <i>vitreoscilla</i> hemoglobin (VHb) contained cells to see if there is any differences in the growth curves with respect to the promoter strength. A statistical model-based approach is used, where we use the Gompertz sigmoid to estimate the growth rate, time to exponential growth and stationary optical density. The uncertainty is assessed by first applying a quantile filter to the residuals in order to remove outliers, followed by bootstrapping.</p>
 
+          <p>
+            We show that there is a statistically significant difference in growth rates at a confidence level of 90% for all VHb contained biobricks except one when comparing with the negative control (cells containing an “empty plasmid”, the ribosome binding site BBa_R0011). For a confidence level of 95%, two biobricks show a significant increase. However, when looking at the estimated growth rates, all VHb-expressing cells showed an increase of at least 24% compared to the negative control. It was further observed that the increase in growth rate was negatively correlated with increased promoter strength. It seems therefore that only a small amount of VHb is enough to enhance growth rate. In addition, a majority of the VHb-expressing cells showed a higher stationary cell density than the negative control, although without significance at a reasonable confidence level.
+          </p>
 
-        <section>
-          <h3 class="section-heading">References</h3>
-          <button id="refBtn" class="btn btn-default" type="button" data-toggle="collapse" data-target="#ref" aria-expanded="false" aria-controls="ref">
-            Show
-          </button>
-          <div class="collapse" id="ref">
-            <ol class="references">
-              <li>[1] Larentis, A., Nicolau, J., Esteves, G., Vareschini, D., de Almeida, F., dos Reis, M., Galler, R. and Medeiros, M. (2014). Evaluation of pre-induction temperature, cell growth at induction and IPTG concentration on the expression of a leptospiral protein in E. coli using shaking flasks and microbioreactor. <i>BMC Research Notes</i>, 7(1), p.671.</li>
-              <li>[2] Zi, Z. (2011). Sensitivity analysis approaches applied to systems biology models. <i>IET Systems Biology</i>, 5(6), pp.336-346.</li>
-              <li>[3] Kafri, M., Metzl-Raz, E., Jona, G. and Barkai, N. (2016). The Cost of Protein Production. <i>Cell Reports</i>, 14(1), pp.22-31.</li>
-            </ol>
-          </div>
+          <p>
+            The results indicate that cells expressing VHb grow faster during the exponential phase and therefore reach stationary cell density faster than those without. However, while we were not able show an increased stationary cell density with statistical significance, we still believe the results may be of biological significance. We suggest more studies to be done in order to fully evaluate the effect of VHb.
+          </p>
         </section>
       </div>
     </div>
