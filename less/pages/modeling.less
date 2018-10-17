@@ -4,7 +4,11 @@
 	width: 100%;
 	position: relative;
 	padding-top: 100px;
-	padding-bottom: 100px;
+  padding-bottom: 100px;
+  
+  .flip {
+    transform: scaleX(-1);
+  }
 
 	#modeling-title {
 		color: white;
@@ -25,12 +29,18 @@
 	}
 
 	#modeling-hemoglobin-text, #modeling-growthcurves-text {
-		margin-left: 50px;
-	}
+    margin-left: 50px;
+  }
+  
+  @media only screen and (min-width : 768px) {
+    #modeling-growthcurves-text {
+      text-align: right;
+    }
+  }
 
 	@media only screen and (min-width : 768px) {
 		#modeling-flowcytometry-text {
-			text-align: right;
+			text-align: left;
 			margin-right: 50px;
 			margin-left: 20px;
 		}
