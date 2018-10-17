@@ -25,6 +25,17 @@
     <div class="row">
       <div class="col-lg-10">
         <section>
+          <h3 class="section-heading">Overview</h3>
+          <p>
+            In this section we present the results of our model. First, we present the results obtained from the procedure of feature selection and discuss the obtained the descriptors from a biological point of view. Then, the model selection procedure is presented and the cross validation and  along with the external validation. The process of generating and ranking mutants is then shown and the proposed low affinity mutants are discussed from a structural point of view. Finally, we select four mutants, discuss the rationale behind the selection and present some wet lab results.
+          </p>
+
+          <p>
+            A set of notebooks is made available online. However, running them might give slightly different results than what is presented here. The reason is due to the randomness involved when building the random forest classifiers in the recursive feature elimination and feature importance stage. However, we have run the notebooks several times and the results should still be consistent with what is presented here.
+          </p>
+        </section>
+
+        <section>
           <h3 class="section-heading">Feature selection</h3>
 
           <p><em>Fig. 1</em> illustrates the results obtained from the feature selection. In total, seven groups of descriptors were passed through the pipeline of which only four remained. Initially, 2874 descriptors were generated of which 1924 remained after the constant and duplication filter. Then, after filtering on co-linearity, only 118 descriptors remained. This big reduction is due to the extremely high redundancy among the descriptors as the dataset consists of mostly single point mutants. The amount of change in the physicochemical and structural properties in the primary structure is then indeed small and some descriptors do not even change at all. As an example, exchanging one hydrophobic amino acid to another does not alter the composition descriptors in feature group 4 (<a href="/Team:Lund/Model/Hemoglobin/MaterialMethod#descriptors_hb">see materials and methods</a>). It is therefore reasonable that only a small amount of uncorrelated descriptors are affected by the point mutations. Furthermore, after the univariate filter, only 46 descriptors were deemed informative and after the final recursive feature elimination (RF-RFECV) only 22 descriptors remained. The results are consistent with the rule of thumb that only a few descriptors are truly informative in biological structure-activity problems [1].
@@ -80,51 +91,254 @@
         </p>
 
         <table class="table">
-          <caption>Table 1: Five randomly selected mutations. The notation is as follows: XNNY means that amino acid X at position NN was substituted for amino acid Y. </caption>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Subunit</th>
-                <th>Mutation</th>
-                <th>Affinity</th>
-              </tr>
+          <caption>Table 1: The results from the cross validation. The chosen hyperparameters plus/minus one standard deviation from the repeated cross validations are shown. </caption>
+
+          <thead>
+            <tr>
+              <th>Accuracy</th>
+              <th>Sensitivity</th>
+              <th>Specificity<th>
+              <th>roc-auc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+            <td>RF</td>
+            <td>0.74 (+/- 0.09)</td>
+            <td>0.89 (+/- 0.09)</td>
+            <td>0.77 (+/- 0.11)</td>
+            <td>0.69 (+/- 0.13)</td>
+            </tr>
+            <tr>
+            <td>GB</td>
+            <td>0.71 (+/- 0.09)</td>
+            <td>0.89 (+/- 0.10)</td>
+            <td>0.74 (+/- 0.06)</td>
+            <td>0.68 (+/- 0.13)</td>
+            </tr>
+            <tr>
+            <td>SVC</td>
+            <td>0.68 (+/- 0.14)</td>
+            <td>1.00 (+/- 0.00)</td>
+            <td>0.68 (+/- 0.01)</td>
+            <td>0.69 (+/- 0.13)</td>
+            </tr>
+            <tr>
+            <td>LR</td>
+            <td>0.70 (+/- 0.04)</td>
+            <td>0.99 (+/- 0.03)</td>
+            <td>0.70 (+/- 0.03)</td>
+            <td>0.68 (+/- 0.12)</td>
+            </tr>
+            <tr>
+            <td>RF + SVC</td>
+            <td>0.78 (+/- 0.06)</td>
+            <td>0.98 (+/- 0.04)</td>
+            <td>0.77 (+/- 0.06)</td>
+            <td>0.72 (+/- 0.13)</td>
+            </tr>
+            <tr>
+            <td>RF + GB</td>
+            <td>0.73 (+/- 0.08)</td>
+            <td>0.89 (+/- 0.10)</td>
+            <td>0.76 (+/- 0.06)</td>
+            <td>0.69 (+/- 0.13)</td>
+            </tr>
+            <tr>
+            <td>RF + LR</td>
+            <td>0.73 (+/- 0.05)</td>
+            <td>0.98 (+/- 0.04)</td>
+            <td>0.74 (+/- 0.04)</td>
+            <td>0.71 (+/- 0.12)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          In addition to the above mentioned models, three voting classifiers were tested. The idea is that while some models may perform poorly on their own, combining them and letting them instead vote for a target might increase the total performance since the weak aspects of one model might be covered the other members. Since the training of a voting classifier becomes exponentially more expensive to train over a grid search due to the increased number of hyperparameters, the obtained hyperparameters from the individual models were used and the voting strategy used was a soft vote. It can be seen that the RF+SVC performs just as good or better than the other voting classifiers on all metrics. This indicates that while the RF was the best mode and SVC the worst, combining them resulted in an overall improvement. The other voting classifiers also showed a slightly improved performance.
+        </p>
+
+        <p>
+          Since the models built have been cross-validated and optimized by using both the descriptors and the target affinities, the data can be considered consumed and cannot be used to evaluate the true performance of the estimators. Therefore, a final validation set is used which has been kept away from all previous feature and model selection procedures. The validation was done by retraining all estimators on the entire model selection data as opposed to in the cross-validation where only 80% is used in order to preserve an internal validation set. The results are illustrated in table 5. It can be seen that all models perform roughly the same as in the cross validation stage, except for the RF+GB which actually performs better. This might seem strange, but is reasonable since the models have now been trained with more data. Consequently, the RF+GB  was chosen as the final model.
+        </p>
+
+        <table class="table">
+        <caption>Table 2: The results from the external validation set. </caption>
+
+        <thead>
+        <tr>
+        <th>Model</th>
+        <th>Accuracy</th>
+        <th>Sensitivity</th>
+        <th>Specificity</th>
+        <th>roc-auc</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>RF</td>
+        <td>0.74</td>
+        <td>0.93</td>
+        <td>0.72</td>
+        <td>0.69</td>
+        </tr>
+        <tr>
+        <td>GB</td>
+        <td>0.74</td>
+        <td>0.93</td>
+        <td>0.72</td>
+        <td>0.69</td>
+        </tr>
+        <tr>
+        <td>SVC</td>
+        <td>0.61</td>
+        <td>1.00</td>
+        <td>0.61</td>
+        <td>0.50</td>
+        </tr>
+        <tr>
+        <td>LR</td>
+        <td>0.70</td>
+        <td>1.00</td>
+        <td>0.67</td>
+        <td>0.61</td>
+        </tr>
+        <tr>
+        <td>RF + SVC</td>
+        <td>0.70</td>
+        <td>0.93</td>
+        <td>0.68</td>
+        <td>0.63</td>
+        </tr>
+        <tr>
+        <td>RF + GB</td>
+        <td>0.78</td>
+        <td>0.93</td>
+        <td>0.76</td>
+        <td>0.74</td>
+        </tr>
+        <tr>
+        <td>RF + LR</td>
+        <td>0.70</td>
+        <td>1.00</td>
+        <td>0.67</td>
+        <td>0.61</td>
+        </tr>
+        </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3 class="section-heading">Screening of hemoglobin mutants</h3>
+        <p>
+          In total, 1795 single point mutations were generated by the procedure explained in the materials and methods section. The RF+GB model was chosen as the discriminator and trained with all data, including the validation set. The mutants were then ranked by their probability of decreasing their oxygen affinity by a soft voting. A selected subset of the ranked mutants is shown in table 3.
+        </p>
+
+        <table class="table">
+          <caption>Table 3: A selected set of mutations. The score is in the range 0-1 where a high score indicates a high probability of being a mutation that results in reduced oxygen binding affinity.
+          <thead>
+            <tr><th>Subunit</th><th>Mutation</th><th>  Score</th>	</tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Hb Canebiere</td>
-                <td>Beta</td>
-                <td>P36A</td>
-                <td>Decreased</td>
-              </tr>
-              <tr>
-                <td>Hb Bologna</td>
-                <td>Beta</td>
-                <td>K61M</td>
-                <td>Decreased</td>
-              </tr>
-              <tr>
-                <td>Hb Meulan</td>
-                <td>Alpha</td>
-                <td>S84N</td>
-                <td>Increased</td>
-              </tr>
-              <tr>
-                <td>Hb Lyon-Bron</td>
-                <td>Alpha</td>
-                <td>V1A</td>
-                <td>Decreased</td>
-              </tr>
-              <tr>
-                <td>HB Alberta</td>
-                <td>Beta</td>
-                <td>G146E</td>
-                <td>Increased</td>
-              </tr>
-            </tbody>
-          </table>
+        <tr><td>beta</td><td>E6D </td><td>0.8653</td></tr>
+        <tr><td>beta</td><td>D73H</td><td> 0.8445</td></tr>
+        <tr><td>beta</td><td>D73R</td><td> 0.8365</td></tr>
+        <tr><td>beta</td><td>K61N</td><td> 0.8203</td></tr>
+        <tr><td>beta</td><td>K61S</td><td> 0.8175</td></tr>
+        <tr><td>beta</td><td>L32W</td><td> 0.8087</td></tr>
+        <tr><td>beta</td><td>K61A</td><td> 0.8039</td></tr>
+        <tr><td>beta</td><td>E6L </td><td>0.7973</td></tr>
+        <tr><td>beta</td><td>K61Q</td><td> 0.7907</td></tr>
+        <tr><td>beta</td><td>D73A</td><td> 0.7897</td></tr>
+        <tr><td>beta</td><td>D73F</td><td> 0.7855</td></tr>
+        <tr><td>beta</td><td>K61P</td><td> 0.7853</td></tr>
+        <!-- <tr><td>E7H </td><td>0.7804</td></tr>
+        <tr><td>K61I</td><td> 0.7699</td></tr>
+        <tr><td>K66Y</td><td> 0.7697</td></tr>
+        <tr><td>G25P</td><td> 0.7681</td></tr>
+        <tr><td>K66A</td><td> 0.7678</td></tr>
+        <tr><td>G25V</td><td> 0.7645</td></tr>
+        <tr><td>K65F</td><td> 0.7632</td></tr>
+        <tr><td>D73P</td><td> 0.7608</td></tr>
+        <tr><td>K66G</td><td> 0.7606</td></tr>
+        <tr><td>G25E</td><td> 0.7578</td></tr>
+        <tr><td>K61G</td><td> 0.7569</td></tr>
+        <tr><td>H2A </td><td>0.7566</td></tr> -->
+        <tr><td>beta</td><td>A142E</td><td>0.2376</td></tr>
+        <tr><td>beta</td><td>L141C</td><td>0.2376</td></tr>
+        <tr><td>beta</td><td>A142R</td><td>0.2376</td></tr>
+        <tr><td>beta</td><td>A142F</td><td>0.2376</td></tr>
+        <tr><td>beta</td><td>L141N</td><td>0.2376</td></tr>
+        <tr><td>beta</td><td>L141H</td><td>0.2376</td></tr>
+        <!-- <tr><td>L141W</td><td>0.2376</td></tr>
+        <tr><td>L141D</td><td>0.2376</td></tr>
+        <tr><td>A142K</td><td>0.2376</td></tr>
+        <tr><td>A142C</td><td>0.2376</td></tr>
+        <tr><td>A142T</td><td>0.2376</td></tr>
+        <tr><td>A142L</td><td>0.2376</td></tr>
+        <tr><td>A142W</td><td>0.2376</td></tr>
+        <tr><td>A142H</td><td>0.2376</td></tr>
+        <tr><td>A142N</td><td>0.2376</td></tr>
+        <tr><td>H143F</td><td>0.2376</td></tr>
+        <tr><td>H143E</td><td>0.2376</td></tr>
+        <tr><td>H143A</td><td>0.2376</td></tr>
+        <tr><td>H143G</td><td>0.2376</td></tr> -->
+        </tbody>
+        </table>
 
+        <p>
+          From the table, it can be seen that the mutations with the highest scores were E6D and with various mutations at positions 73 and 61. These residues are highlighted in fig 3, denoted as Glu6, Asp73 and Lys61 respectively. As can be seen, the residue at position 73 is situated very close to the heme group and may therefore directly affect the oxygen binding by direct interaction. Furthermore, the residue corresponds to aspartic acid which is a highly polar amino acid. By looking at the first four mutations at this position, the model suggests a substitution to either histidine, arginine, phenylalanine or alanine in order to reduce the oxygen binding affinity. Interestingly, both the histidine and arginine are basic amino acids, while phenylalanine and alanine, being aromatic and aliphatic respectively, are neutral. The model therefore proposes that by making the polarity at residue 73 less acidic, the oxygen binding affinity will drop. It is also worth mentioning that the residue at position 61 is very close to the His63, the distal histidine which directly interacts with the heme group. The model suggests changing the lysine for either glutamine, asparagine, proline or serine. Glutamine and asparagine both contain an amide group and the proline a secondary amine, meaning they are all slightly basic. Since the lysine on the other hand is highly basic, it seems that the model suggests that a reduction in basicity at position 61 will lead to reduced oxygen affinity.
+        </p>
 
+        <p>
+          Furthermore, looking at residue 6, which corresponds to glutamic acid, it does not seem to take part in any direct interaction with the oxygen binding, as it is instead located at the surface of the hemoglobin, facing away from the dimer-dimer bonding. It may therefore instead be that this residue affects the oxygen binding by interacting with other mechanisms participating in the oxygen binding, such as the allosteric binding of other ligands.
+        </p>
+
+        <p>
+          Finally, looking at the low score (high affinity) mutations, it can be seen that almost all mutations are located around the C-terminus. This may be due to the C-terminus being relatively close to the F-helix which is located just over the heme group, as illustrated in fig. 3. By mutating residues at this chain, there might be a possibility for a subsequent conformational change in how the F-helix is situated, possibly either facilitating oxygen binding to the heme group or hindering the subsequent dissociation.
+        </p>
+
+        <p>
+
+        </p>
+
+        <figure>
+          <a href="#" data-featherlight="http://2018.igem.org/wiki/images/d/d1/T--Lund--hemoglobin_mutations.svg">
+            <img class="img-responsive center-block img-thumbnail" src="http://2018.igem.org/wiki/images/d/d1/T--Lund--hemoglobin_mutations.svg" style="width: 80%">
+          </a>
+          <figcaption>Figure 3: The three dimensional structure of the human hemoglobin subunit beta. The residues Glu6, Asp73, His63 and Lys61 has explicitly been marked along with the C-terminus to illustrate some proposed sites where the model suggests a mutation to occur.</figcaption>
+        </figure>
       </section>
+
+      <section>
+        <h3 class="section-heading">Mutant selection</h3>
+        <p>
+          We chose the mutations D73A, D73K, K65D and E6D as our mutations. The scores are illustrated in table 4. The ones at residue 73 were chosen due to its close proximity to the heme group. We chose one substitution to the smaller alanine since it is neutral and does not completely change sign on the polarity. The other substitution to lysine was chosen because it completely changes the sign of the polarity. In addition, we did not want to change the size of the amino acid too much and since neither alanine nor lysine are bulky, it seemed like a reasonable choice compared to the other proposed mutations. The residue at position 65 was changed from lysine to aspartic acid to see the effect of a sign change in close proximity to the His67. Furthermore, both residues have similar size. The final mutation, E6D was chosen simply because it had the highest score of all mutations.
+        </p>
+
+        <table class="table">
+        <caption>Table 4. The selected mutations. </caption>
+        <thead>
+        <tr><th>Subunit</th><th>Mutation</th><th>Score</th><th>Why</th></tr>
+        </thead>
+        <tbody>
+        <tr><td>beta</td><td>D73A</td><td>0.738</td><td>Close to heme</td></tr>
+        <tr><td>beta</td><td>D73K</td><td>0.676</td><td>Close to heme</td></tr>
+        <tr><td>beta</td><td>K65D</td><td>0.753</td><td>Close to His63</td></tr>
+        <tr><td>beta</td><td>E6D</td><td>0.865</td><td>Highest score</td></tr>
+        </body>
+        </table>
+      </section>
+
+      <section>
+        <h3 class="section-heading">Lab results</h3>
+
+        <p>
+          The mutants from table 4 were ordered from IDT and expressed in E. coli BL21-DE3 as explained in the experimental design section. All four proteins were successfully expressed as indicated by SDS-PAGE (<em>fig. 3</em>) and were proven to be functional by measuring the absorbance spectrum as shown in <em>fig. 4-6</em>. See the results section for more details.
+        </p>
+
+
+      </section
 
         <section>
           <h3 class="section-heading">References</h3>
