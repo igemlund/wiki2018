@@ -33,59 +33,56 @@
         </section>
 
         <section>
-          <h3 class="section-heading">Plasmid construction </h3>
-          <p>
-            For our project, we needed to construct several different kinds of plasmids: VHb and VHb-GFP, protein A and VHb-protein A and point-mutated adult human hemoglobin (HbA).          </p>
-          </p>
-
-          <p><b>VHb and VHb-GFP construction</b></p>
+          <h3 class="section-heading">Plasmid construction - VHb & GFP</h3>
           <p>
             Initially, we planned to order both the VHb constructs and the GFP construct directly from Integrated DNA Technologies (IDT). However, as the latter contained multiple repeated sequences, it could not be synthesized and we therefore decided to instead use Bba_J364000 that was provided in the iGEM distribution kit.
           </p>
 
           <p>
             Constructs like the one in <i>fig. 1</i> were obtained by cloning the VHb biobrick, as a gBlock fragment, into pSB1C3. It was first attempted according to IDTs protocol for gBlocks. For this reason, all seven fragments were digested with XbaI and SpeI. However, due to lack of experience in handling gBlock fragments, the clonings did not succeed. After that, the protocol from iGEM Academy was tried, still with no success. In the meantime, our stock of gBlock fragments was starting to run out. Therefore, other strategies such as Gibson Assembly and standard restriction enzyme cloning became our main alternatives.
+
           </p>
 
           <figure>
-            <img class="img-responsive center-block img-thumbnail" src="">
-            <figcaption>Figure 3: VHb assembly in pSB1C3 by conventional digestion-ligation technique</figcaption>
-          </figure>
-          <figure>
-            <img class="img-responsive center-block img-thumbnail" src="">
-            <figcaption>Figure 4: VHb cloning strategy through Gibson assembly</figcaption>
+              <img class="img-responsive center-block img-thumbnail" src="http://2018.igem.org/wiki/images/7/78/T--Lund--VHb_assembly.png">
+            <figcaption>Figure 1: VHb assembly in pSB1C3 by conventional digestion-ligation technique.</figcaption>
           </figure>
 
           <p>
-            Primers were designed to amplify the remaining biobrick stock and to create the overlaps required for Gibson assembly. Restriction enzyme cloning and Gibson assembly were applied in parallel to obtain successful results as fast as possible. As can be seen in <i>fig. 3</i>, BBa_J04450, obtained from iGEM distribution kit, was used as the backbone source after amplification in <i>E. coli</i> TG1. <i>Fig. 4</i> shows how primers were designed to create the overlapping sequences for Gibson assembly. The backbone fragment utilized was a linearized plasmid from the iGEM distribution kit. Backbone fragment, pSB1C3, known contains prefix and suffix, meanwhile the prefix and suffix of VHb gBlock fragment was digested as mentioned before
+            Primers were designed to amplify the remaining biobrick stock and to create the overlaps required for Gibson assembly. Restriction enzyme cloning and Gibson assembly were applied in parallel to obtain successful results as fast as possible. As can be seen in <i>fig. 1</i> BBa_J04450, obtained from the iGEM distribution kit, was used as the backbone source after amplification in <i>E. coli</i> TG1. <i>Fig. 2</i> shows how primers were designed to create the overlapping sequences for Gibson assembly. The backbone fragment utilized was a linearized plasmid from the iGEM distribution kit. The backbone fragment, pSB1C3, contained the prefix and suffix, meanwhile the prefix and suffix of the VHb gBlock fragments had been digested as mentioned before.
           </p>
+
+
+          <figure>
+            <img class="img-responsive center-block img-thumbnail" src="http://2018.igem.org/wiki/images/7/7d/T--Lund--Clonning.png">
+            <figcaption>Figure 2: VHb cloning strategy through Gibson assembly</figcaption>
+          </figure>
 
           <p>
             Once the VHb biobricks were successfully cloned, the inserts were screened to ensure that the constructs were successfully ligated into the backbones. This was done through colony PCR, PCR amplification on purified plasmids and digestion with restriction enzymes. The results from these methods were analyzed by agarose gel electrophoresis and ultimately positive results were obtained for all constructs.
           </p>
 
-          <figure>
-            <img class="img-responsive center-block img-thumbnail" src="">
-            <figcaption>Fig. 5: VHb-GFP assembly through conventional restriction enzyme cloning.</figcaption>
-          </figure>
-
           <p>
-            Once the VHb biobricks were confirmed to be successfully inserted, they needed to be combined with GFP for co-expression. 3A assembly was the first method of choice, performed according to the protocol from the iGEM registry. However, with lack of results we modified the protocol slightly and proceeded with Gibson assembly and conventional restriction enzyme cloning as shown in fig. 5. Since the sticky ends created by XbaI and SpeI are very similar, GFP can be ligated into the VHb plasmid by cutting the suffix site of the plasmid with both rSpeI and PstI. Fragments were purified by gel extraction to increase the chances of successful ligation. In parallel, Gibson assembly was attempted. The design of the necessary overlapping fragments is shown in <i>fig. 6</i>.
+            Once the VHb biobricks were confirmed to be successfully inserted, they needed to be combined with GFP for co-expression. 3A assembly was the first method of choice, performed according to  the protocol from the iGEM registry. However, with lack of results we modified the protocol slightly and proceeded with Gibson assembly and conventional restriction enzyme cloning as shown in <i>fig. 3</i>. Since the sticky ends created by XbaI and SpeI are very similar, GFP can be ligated into the VHb plasmid by cutting the suffix site of the plasmid with both rSpeI and PstI. Fragments were purified by gel extraction to increase the chances of successful ligation. In parallel, Gibson assembly was attempted. The design of the necessary overlapping fragments is shown in <i>fig. 4</i>.
           </p>
 
           <figure>
-            <img class="img-responsive center-block img-thumbnail" src="">
-            <figcaption>Fig. 6: VHb cloning strategy using Gibson assembly.</figcaption>
+            <img class="img-responsive center-block img-thumbnail" src="http://2018.igem.org/wiki/images/0/08/T--Lund--conventional_assembly.png">
+            <figcaption>Figure 3: VHb-GFP assembly through conventional restriction enzyme cloning.</figcaption>
           </figure>
 
-          <p><b>Human hemoglobin</b></p>
           <p>
-            Based on our <a href="/Team:Lund/Model/Hemoglobin">hemoglobin model</a>, we had selected five different point mutations for the beta chain of adult human hemoglobin (HbA) which we wanted to express and study the oxygen affinity of. The wild-type DNA of HbA was acquired from Nélida Leiva Eriksson from Pure and Applied Biochemistry department of Lund University in a pET-Duet plasmid.The beta chain mutants were ordered as gBlocks from IDT and amplified through PCR. The beta chain sequences in the plasmid was then replaced by the mutated one by digesting of both plasmid and gBlocks with NdeI and XhoI, agarose gel separation of plasmid and wild-type beta chain and ligation of plasmid and mutated beta chain. Four out of the five mutations were successfully cloned, see one example in <i>fig. 7</i>.
+            <i>Fig. 4</i> depicts how primers to obtain the overlapping fragments were designed. However, only one VHb-GFP construct (K2602026) out of six was successfully assembled through Gibson assembly.
           </p>
+
           <figure>
-            <img class="img-responsive center-block img-thumbnail" src="">
-            <figcaption>Fig. 7: Simplified drawing of the pET-Duet plasmid used for HbA mutations.</figcaption>
+            <img class="img-responsive center-block img-thumbnail" src="http://2018.igem.org/wiki/images/b/bb/T--Lund--Gibsson.png">
+            <figcaption>Figure 4: VHb cloning strategy using Gibson assembly.</figcaption>
           </figure>
+
+          <p>
+            The final biobricks were characterized and confirmed via a combination of sequencing, colony PCR, PCR amplification, restriction enzyme digestion, as well as measuring GFP fluorescence and observing the red color originating from the hemoglobin in the cell pellets. During further analysis, as described further down on this page, biobricks were additionally confirmed by absorbance measurements and flow cytometry.
+          </p>
         </section>
 
         <section>
@@ -95,7 +92,8 @@
           </p>
 
           <p>
-            Further conditions that were modified includes the free headspace volume in the cultivation flasks as a way of restricting the oxygen availability. This was accomplished by simply changing the headspace to culture volume ratio and using flasks with or without baffles. Clearly, by restricting the oxygen uptake, cell cultures expressing VHb should thrive compared to those without. The procedure was advised after a long <a href="/Team:Lund/Human_Practices">Skype meeting</a> with Prof. Benjamin C. Stark, an important figure within the field of biochemistry and development of VHb technology.
+            Further conditions that were modified include the free headspace volume in the cultivation flasks as a way of restricting the oxygen availability. This was accomplished by simply changing the headspace to culture volume ratio and using flasks with or without baffles. By restricting the oxygen uptake, cell cultures expressing VHb should thrive compared to those without. The procedure was advised after a long <a href="/Team:Lund/Human_Practices">Skype meeting</a> with Prof. Benjamin C. Stark, an important figure within the development of VHb technology.
+
           </p>
 
           <p>
@@ -104,34 +102,43 @@
         </section>
 
         <section>
-          <h3 class="section-heading">Growth curve analysis</h3>
+          <h3 class="section-heading">Analysis of growth curves</h3>
           <p>
             In order to compare the growth rates between cells expressing different amounts of hemoglobin, cultivation experiments were carried out with samples taken at regular time intervals. The optical density was immediately measured by spectrophotometry. In total three controls were used: cells with no plasmid, with plasmid containing only the ribosome binding site R0010 (“empty plasmid”), and with a plasmid expressing only GFP. The control with an empty plasmid was used to make a fair comparison as the burden associated with a plasmid is twofold. First, the cell has to express the target proteins from within the plasmid. Secondly, the additional genes within the plasmid, such as the ones accounting for antibiotic resistance, also need to be expressed.
           </p>
-
-          <!-- <figure>
-            <img class="img-responsive" src="http://2017.igem.org/wiki/images/3/32/T--Lund--nahrt7.svg" alt="Gene structure">
-            <figcaption>Figure 1: nahR sequence with His-tag located under the T7 promoter.</figcaption>
-          </figure> -->
         </section>
 
         <section>
-          <h3 class="section-heading">Proof of concept: Production of GFP </h3>
-
+          <h3 class="section-heading">Proof of concept: Production of GFP</h3>
           <p>
-            The principle behind our proof of concept experiment is simple: if VHb has an effect on the production of recombinant GFP, there should be an observable change in fluorescence intensity. The fluorescence intensity was measured by flow cytometry and spectrophotometry. The advantage of flow cytometer over using a plate reader as in the InterLab study is that in flow cytometry, the fluorescence intensity is measured for each individual cell. This means that it is possible to determine whether effects of VHb on GFP production are caused by a change in overall cell density or a change within the individual cells. It also provides the additional advantage of giving much more exact information about the concentration of cells than what can be obtained by OD600. Whilst, through spectrophotometry and insight of its coefficient extinction, the concentration of not only GFP but also VHb produced after the cells being disrupted can be determined at the same time and in more straight forward way. Moreover, the correlation between the amount of VHb and the GFP co-expression could be clearly seen.
+            The principle behind our proof of concept experiment is simple: if VHb has an effect on the production of recombinant GFP, there should be an observable change in fluorescence intensity. The fluorescence intensity was measured by flow cytometry and absorbance was measured by spectrophotometry. The advantage of using a flow cytometer over a plate reader as in the InterLab study is that in flow cytometry, the fluorescence intensity is measured for each individual cell. This means that it is possible to determine whether effects of VHb on GFP production are caused by a change in overall cell density or a change within the individual cells. It also provides the additional advantage of giving much more exact information about the concentration of cells than what can be obtained by OD<sub>600</sub>. Whilst, through spectrophotometry and insight of its extinction coefficient, the concentration of not only GFP but also VHb produced after disruption of the cells can be determined at the same time and in more straightforward way. Moreover, the correlation between the VHb expression level and the GFP absorbance could be clearly seen.
+          </p>
+        </section>
+
+        <section>
+          <h3 class="section-heading"> Expression of human hemoglobin mutants</h3>
+          <p>
+            Based on our model, we had selected five different point mutations for the beta chain of adult human hemoglobin (HbA) which we wanted to express and study the oxygen affinity of. The wild-type DNA of HbA was acquired from our supervisor, Dr. Nélida Leiva Eriksson, in a pET-Duet plasmid.The beta chain mutants were ordered as gBlocks from IDT and amplified through PCR. The beta chain sequences in the plasmid was then replaced by the mutated one by digesting of both plasmid and gBlocks with NdeI and XhoI, agarose gel separation of plasmid and wild-type beta chain and ligation of plasmid and mutated beta chain. Four out of the five mutations were successfully cloned and transformed into <i>E. coli</i> BL21(DE3), example plasmid shown in <i>fig. 5</i>.
           </p>
 
-          <!-- <figure>
-            <img class="img-responsive" src="http://2017.igem.org/wiki/images/4/4b/T--Lund--sgfpt7.svg" alt="Gene structure">
-            <figcaption>Figure 2: <i>sfGFP</i> located under the T7 promoter.</figcaption>
-          </figure> -->
+          <figure>
+            <img class="img-responsive center-block img-thumbnail" src="http://2018.igem.org/wiki/images/a/a0/T--Lund--PetDuet.png">
+            <figcaption>Figure 5: Simplified drawing of the pET-Duet plasmid used for HbA mutations.</figcaption>
+          </figure>
+
+          <p>
+            The cultivations of HbA mutants were carried out in 2 L baffled flasks with 500 mL TB media. When cultures reached OD<sub>620</sub> ≥ 2.0, ALA and Isopropyl-Beta-D-Thiogalactoside (IPTG) were added to final concentrations of 0.3 mM and 0.1 mM respectively for induction of HbA expression. Cultures were also bubbled with CO for approximately 15 seconds.
+          </p>
+
+          <p>
+            As the aim of this study was to investigate the oxygen affinity of the HbA mutants, we planned to send our purified HbA mutants for oxygen affinity measurements. In addition, spectrophotometry and SDS-PAGE were used to confirm functional hemoglobins.
+          </p>
         </section>
 
         <section>
           <h3 class="section-heading">Case study: Production of protein A</h3>
           <p>
-            After screening the promoters using GFP, we wanted to select some of them for co-expression with a protein of industrial interest. As a part of our <a href="">integrated practices</a>, Protein A was recommended to us by Laila Sakhnini, industrial PhD student at NovoNordisk. She also provided us with the sequence for the Z domain of the protein, which is the domain that binds to the Fc region of antibodies. This quality is what makes protein A an important protein within the pharmaceutical industry, where it is used for the purification of therapeutic monoclonal antibodies.
+            After screening the promoters using GFP, we wanted to select some of them for co-expression with a protein of industrial interest. As a part of our <a href="/Team:Lund/Human_Practices">integrated practices</a>, Protein A was recommended to us by Laila Sakhnini, industrial PhD student at NovoNordisk. She also provided us with the sequence for the Z domain of the protein, which is the domain that binds to the Fc region of antibodies. This property is what makes protein A an important protein within the pharmaceutical industry, where it is used for the purification of therapeutic monoclonal antibodies.
           </p>
 
           <p>
@@ -139,35 +146,35 @@
           </p>
 
           <p>
-            However, only the former of the two reactions succeeded. Therefore, we modified our strategy to that shown in <i>fig. 8.</i> pSB1C3 containing protein A was digested with both EcoRI and XbaI in its prefix. VHb was digested with EcoRI and SpeI and then ligated into the plasmid containing protein A. Finally, the insert was confirmed as described previously for VHb.
+            However, only the former of the two reactions succeeded. Therefore, we modified our strategy to that shown in <i>fig. 6</i>. pSB1C3 containing protein A was digested with both EcoRI and XbaI in its prefix. VHb was digested with EcoRI and SpeI and then ligated into the plasmid containing protein A. Finally, the insert was confirmed as described previously for VHb.
           </p>
-
 
           <figure>
-            <img class="img-responsive center-block img-thumbnail" src="">
-            <figcaption>Fig. 8: VHb-Protein A assembly through conventional restriction enzyme cloning.</figcaption>
+            <img class="img-responsive center-block img-thumbnail" src="http://2018.igem.org/wiki/images/1/13/T--Lund--Protein_A.png">
+            <figcaption>Figure 6: VHb-Protein A assembly through conventional restriction enzyme cloning.</figcaption>
           </figure>
-        </section>
 
-        <section>
-          <h3 class="section-heading">Case study: Design of human hemoglobins</h3>
           <p>
-            As the aim of this study was to investigate the oxygen affinity of the HbA mutants, we planned to send our purified HbA mutants for oxygen affinity measurements. In addition, spectrophotometry and SDS-PAGE were used to confirm functional hemoglobins.
+            With protein A, we needed a different method to determine the yield rather than flow cytometry. We decided to use SDS-PAGE for confirmation of expression and to analyze protein solubility.
           </p>
+
         </section>
 
         <section>
           <h3 class="section-heading">Case study: Reactor upscaling</h3>
           <p>
-            *Fermenters instead of flasks: Input from Magnus and from AZ. Can control oxygen level much better + measure e.g. pH continuously. It’s a better model of how it actually is in the industry. Something I think about density becomes more of a problem or something with the oxygen which is more realistic in a fermenter.
+            The objective of the up-scaling was to evaluate how the VHb-GFP system works on a larger scale. This was done to better emulate industrial scenarios as recommended to us by our contacts in the <a href="/Team:Lund/Human_Practices">biopharmaceutical industry</a>. We wanted to compare the production of GFP with and without VHb co-expression, so for the first cultivation we used the VHB-GFP composite part BBa_K2602020, since it, based on previous results from our screening of the promoters, indicated the highest production of GFP in 80 % headspace. The second fermentation used the GFP composite part BBa_J364000 from the measurement kit.
+
           </p>
+
+          <p>
+            The department of Pure and Applied Biochemistry at Lund university has substantial experience working with hemoglobin, mainly of human origin but also from <i>Vitreoscilla</i>. Therefore we decided to follow their fed-batch protocol for expression of adult human hemoglobin (HbA), which was provided to us by our supervisor, Dr. Nélida Leiva Eriksson. We cultivated the cells in 2 L medium based on Davis Minimal Broth for approximately 31 hours, feeding with glucose when needed. We monitored dissolved oxygen, base addition, pH and took regular samples to measure cell density and glucose concentration in the medium.
+          </p>
+
         </section>
 
-      </div>
-    </div>
-
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <h3 class="section-heading">References</h3>
         <button id="refBtn" class="btn btn-default" type="button" data-toggle="collapse" data-target="#ref" aria-expanded="false" aria-controls="ref">
           Show
