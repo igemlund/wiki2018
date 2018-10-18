@@ -23,7 +23,11 @@
       <section>
         <div class="row">
           <div class="col-md-8">
-            <h3 class="section-heading">Overview</h3>
+            <h3 class="section-heading">Plasmid construction</h3>
+            <p>
+              The <em>Vitreoscilla</em> hemoglobin (VHb) biobricks were ordered from IDT as double-stranded, blunt-ended gBlocks. To insert them into plasmids, gBlocks and pSB1C3 were digested with the same restriction enzymes, ligated and transformed into <em>Escherichia coli.</em> Successful ligations were confirmed by colony PCR, restriction enzyme digestion and/or sequencing (GATC sequencing).
+
+            </p>
           </div>
         </div>
       </section>
@@ -31,13 +35,66 @@
       <section>
         <div class="row">
           <div class="col-md-8">
-            <h3 class="section-heading">Results and Discussion</h3>
+            <h3 class="section-heading">Expression</h3>
 
+            <p>
+              After successful transformations, we performed SDS-PAGE (<i>fig. 1</i>). VHb has a molecular weight of 15.8 kDa, which is expected to be just above the second band of the ladder. The gel shows that all our transformations have a band with the expected molecular weight. However, we cannot confirm that it corresponds to VHb as the negative control also has a band with the same molecular weight. It is possible that there are other proteins expressed in <i>E. coli</i> of the same molecular weight, making the VHb difficult to discern. Due to these inconclusive results, we would have liked to perform a western blot analysis. However this wasn’t possible, as there are no commercially antibodies available for VHb. One way to confirm expression of the protein could be to express it with a His-tag, which would allow for purification, and then perform the SDS-PAGE.
+
+            </p>
+
+            <figure>
+              <a href="#" data-featherlight="  http://2018.igem.org/wiki/images/e/ec/T--Lund--SDS201-16.jpg">
+                <img class="img-responsive center-block img-thumbnail" src="  http://2018.igem.org/wiki/images/e/ec/T--Lund--SDS201-16.jpg">
+              </a>
+              <figcaption>Figure 1:  SDS-PAGE results. From left to right: ladder, negative control (biobrick BBa_R0010), K2602010-K2602016.</figcaption>
+            </figure>
+
+            <p>
+              When expressing VHb, we found that addition of Aminolevulinic acid (ALA) increased the red color which is characteristic of hemoglobin (<i>fig. 2</i>). ALA is a precursor to heme, a ligand necessary for the function of hemoglobin. Bubbling the cultivations with carbon monoxide (CO), which is commonly done when expressing human hemoglobins, also increased the red color.
+            </p>
+
+            <figure>
+              <a href="#" data-featherlight=" http://2018.igem.org/wiki/images/b/b0/T--Lund--vhb50ml.jpg">
+                <img class="img-responsive center-block img-thumbnail" src="http://2018.igem.org/wiki/images/b/b0/T--Lund--vhb50ml.jpg">
+              </a>
+              <figcaption>Figure 2: BBa_K2602010 and BBa_K2602013 expressed in <i>E. coli</i> BL21, as well as BBa_R0010 as a negative control. Pellets in the back to the right have a stronger red color, characteristic of hemoglobin.</figcaption>
+            </figure>
           </div>
 
           <div class="col-md-8">
+            <h3 class="section-heading">Growth curve analysis</h3>
+            <p>
+              The growth curves (<i>fig. 3</i>) of the VHb composite BioBricks were analyzed to see if VHb expression had any effect on growth rate, final OD or lag time and if the promoter strength influenced this effect. The curves were analyzed through a statistical model-based approach where the Gompertz sigmoid was used to to estimate the growth rate.
+            </p>
 
+            <figure>
+              <a href="#" data-featherlight="http://2018.igem.org/wiki/images/b/ba/T--Lund--Growth_Curves_VHB.png">
+                <img class="img-responsive center-block img-thumbnail" src="http://2018.igem.org/wiki/images/b/ba/T--Lund--Growth_Curves_VHB.png ">
+              </a>
+              <figcaption>Figure 3: Growth curve of the VHb constructs expressed in <i>E. coli</i> BL21 at 37ºC and 150 rpm. From left to right and the top to the bottom: BBa_K2602010, BBa_K2602015, BBa_K2602011, BBa_K2602014, BBa_K2602013 and BBa_K2602016. </figcaption>
+            </figure>
+
+            <p>
+              Parameter estimates with a 95% confidence interval are shown in (<i>fig. 4</i>). For the final OD600, there was no significant difference between the constructs or compared to the negative control. The lag time or time to exponential growth was also determined to not be significant.
+            </p>
+
+            <p>
+              However, there is a significant difference in growth rates at a level of 90% for all VHb-containing biobricks except K2602011 compared to the negative control. For K2602014 and K2602015, the effect was significant also on a 95% confidence level. Interestingly these two have the lowest promoter strengths, with the relative strengths 0.00 and 0.01, respectively. However, we have results suggesting that the expression level in 2014 is not 0, but that the promoter is in fact leaking to some extent. The implication of this is that a low level of VHb expression has a positive effect on the growth rate.
+            </p>
+
+            <figure>
+              <a href="#" data-featherlight="http://2018.igem.org/wiki/images/0/0a/T--Lund--parameters_90.svg">
+                <img class="img-responsive center-block img-thumbnail" src="http://2018.igem.org/wiki/images/0/0a/T--Lund--parameters_90.svg">
+              </a>
+              <figcaption>Figure 4: Estimated growth parameters along with their 90% confidence intervals of the VHb constructs expressed in <i>E. coli</i> BL21 at 37ºC and 150 rpm. From left to right BBa_K2602010, BBa_K2602011, BBa_K2602012, BBa_K2602013, BBa_K2602014, BBa_K2602015 and BBa_K2602016.  </figcaption>
+            </figure>
+
+            <p>
+              It was further observed that the increase in growth rate was negatively correlated with increased promoter strength. It seems therefore that only a small amount of VHb is enough to enhance growth rate. The results also indicate that cells expressing VHb grow faster during the exponential phase and therefore reach stationary cell density faster than those without. However, while we were not able show an increased stationary cell density with statistical significance, we still believe the results may be of biological significance. We suggest more studies to be done in order to fully evaluate the effect of VHb. Read more about the results of the growth curve analysis <a href="http://2018.igem.org/Team:Lund/Model/GrowthCurves/Results">here</a>.
+            </p>
           </div>
+
+
         </div>
       </section>
     </div>
